@@ -1,0 +1,152 @@
+﻿@model DbModel.ViewModel.Student.AddStudentViewModel
+@{
+    ViewBag.Title = "Create";
+}
+<!-- Include DatePicker Required Prerequisites -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+<script src="~/Content/date/moment.min.js"></script>
+
+<ul class="breadcrumb">
+    <li><a href="#">Home</a><span class="divider">&raquo;</span></li>
+    <li><a href="#">Student</a><span class="divider">&raquo;</span></li>
+    <li class="active">Create New Student</li>
+</ul>
+<div class="row-fluid">
+    <div class="span ">
+        <div class="nonboxy-widget">
+            <div class="widget-head">
+                <h5>Create New Teacher</h5>
+            </div>
+            <div class="widget-content">
+                <div class="widget-box">
+                    @using (Html.BeginForm("Create", "Student", FormMethod.Post, new { @class = "form-horizontal well ucase" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
+
+                        <fieldset>
+                            <legend>Student Information</legend>
+                            <div class="control-group">
+                                <label class="control-label">First Name</label>
+                                <div class="controls">
+                                    @*<input type="text" class="input-large" id="FirstName" name="FirstName">*@
+                                    @Html.EditorFor(model => model.FirstName, "", new { @class = "input-large" })
+                                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "help-inline" })
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Last Name</label>
+                                <div class="controls">
+                                    @*<input type="text" class="input-large" id="LastName" name="LastName">*@
+                                    @Html.EditorFor(model => model.LastName, "", new { @class = "input-large" })
+                                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "help-inline" })
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Student.NO</label>
+                                <div class="controls">
+                                    @*<input type="text" class="input-large" id="LastName" name="LastName">*@
+                                    @Html.EditorFor(model => model.SNO, "", new { @class = "input-large" })
+                                    @Html.ValidationMessageFor(model => model.SNO, "", new { @class = "help-inline" })
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Average</label>
+                                <div class="controls">
+                                    @*<input type="text" class="input-large" id="LastName" name="LastName">*@
+                                    @Html.EditorFor(model => model.Average, "", new { @class = "input-large" })
+                                    @Html.ValidationMessageFor(model => model.Average, "", new { @class = "help-inline" })
+                                </div>
+                            </div>
+                            @*<div class="control-group">
+                                <label class="control-label">Avatar Path</label>
+                                <div class="controls">
+                                    <input class="input-file" type="file">
+                                </div>
+                            </div>*@
+                            <div class="control-group">
+                                <label class="control-label">Birth Date </label>
+                                <div class="controls">                                    
+                                    @*<input type="text" class="form-control" id="BirthDay" name="BirthDay">*@
+                                    @Html.TextBoxFor(model => model.BirthDay, "", new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.BirthDay, "", new { @class = "help-inline" })
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Gender</label>
+                                <div class="controls">
+                                    <label class="radio inline">
+                                        @*<input type="radio" value="0" id="Gender" name="Gender" data-val="true" data-val-required="Gender is required.">*@
+                                        @Html.RadioButtonFor(m => m.Gender, true)Male
+                                    </label>
+                                    <label class="radio inline">
+                                        @*<input type="radio" value="1" id="Gender" name="Gender" data-val="true" data-val-required="Gender is required.">*@
+                                        @Html.RadioButtonFor(m => m.Gender, false)Female
+                                    </label>
+                                    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "help-inline" })
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">City</label>
+                                <div class="controls">
+                                    @*<input type="text" class="input-large" id="FirstName" name="FirstName">*@
+                                    @Html.EditorFor(model => model.City, "", new { @class = "input-large" })
+                                    @Html.ValidationMessageFor(model => model.City, "", new { @class = "help-inline" })
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">UserName</label>
+                                <div class="controls">
+                                    @*<input type="text" class="input-large">*@
+                                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "input-large" } })
+                                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "help-inline" })
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Password</label>
+                                <div class="controls">
+                                    @*<input type="text" class="input-large">*@
+                                    @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "input-large" } })
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "help-inline" })
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Confirm Password</label>
+                                <div class="controls">
+                                    @*<input type="text" class="input-large">*@
+                                    @Html.PasswordFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "input-large" } })
+                                    @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "help-inline" })
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Email</label>
+                                <div class="controls">                                    
+                                @*<input type="email" class="input-large">*@
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @type = "email", @class = "input-large" } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "help-inline" })
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-info">Save changes</button>
+                            <button class="btn btn-warning">Cancel</button>
+                        </div>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Include DatePicker Picker -->
+<script src="~/Content/date/daterangepicker.js"></script>
+<link href="~/Content/date/daterangepicker.css" rel="stylesheet" />
+<script>
+    $('input[name="BirthDay"]').daterangepicker({
+        //defaultDate: "11/1/2013",
+        singleDatePicker: true,
+        showDropdowns: true
+    });
+</script>
+@*@Scripts.Render("~/bundles/jqueryval")*@
+

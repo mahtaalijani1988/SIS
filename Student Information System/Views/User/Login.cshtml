@@ -1,0 +1,55 @@
+﻿@model  DbModel.ViewModel.User.LoginViewModel
+@{
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+    ViewBag.Title = "Login";
+}
+
+
+<div class="row-fluid">
+    <div class="span ">
+        <div class="nonboxy-widget">
+            <div class="widget-content">
+                <div class="widget-box">
+                    @using (Html.BeginForm("Login", "User", FormMethod.Post, new { @class = "form-horizontal" }))
+                    {
+                        @*@Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })*@
+
+                        @Html.AntiForgeryToken()
+
+                        @Html.Hidden("returnUrl", ViewBag.ReturnUrl as string)
+
+                        <fieldset>
+                            <legend>Login</legend>
+                            <div class="control-group">
+                                <label class="control-label">UserName</label>
+                                <div class="controls">
+                                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @value = "admin" })
+                                    @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Password</label>
+                                <div class="controls">
+                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", @value = "so213kar" })
+                                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <div class="checkbox">
+                                        @Html.CheckBoxFor(m => m.RememberMe)
+                                        @Html.LabelFor(m => m.RememberMe)
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-info">Login</button>
+                        </div>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

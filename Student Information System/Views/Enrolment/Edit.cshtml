@@ -1,0 +1,82 @@
+﻿@model DbModel.ViewModel.Election.EditElectionViewModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<script src="~/Content/js/jquery-1.10.2.js"></script>
+
+
+
+<ul class="breadcrumb">
+    <li><a href="#">Home</a><span class="divider">&raquo;</span></li>
+    <li><a href="#">Enrolment</a><span class="divider">&raquo;</span></li>
+    <li class="active">Edit Enrolment</li>
+</ul>
+<div class="row-fluid">
+    <div class="span ">
+        <div class="nonboxy-widget">
+            <div class="widget-head">
+                <h5>Edit Enrolment</h5>
+            </div>
+            <div class="widget-content">
+                <div class="widget-box">
+                    @using (Html.BeginForm("Edit", "Enrolment", FormMethod.Post, new { @class = "form-horizontal well ucase" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
+
+                        <fieldset>
+                            <legend>Form</legend>
+                            <div class="control-group">
+                                <label class="control-label">Name</label>
+                                <div class="controls">
+                                    <input type="text" class="input-large">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Value</label>
+                                <div class="controls">
+                                    <input type="text" class="input-large">
+                                </div>
+                            </div>
+                            @*<div class="control-group">
+                                    <label class="control-label">Value</label>
+                                    <div class="controls">
+                                        <table class="table order-tbl" id="EnrollmentTable124">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Name</th>
+                                                    <th>Cource Count</th>
+                                                    <th>Prerequisite</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach(var item in Model.CourceList)
+                                                {
+                                                    <tr>
+                                                        <td class="center"><input type="checkbox" name="ch_@item.Id"></td>
+                                                        <td><span class="label label-important">@item.Name</span></td>
+                                                        <td><span class="label label-important">@item.Cource_Count</span></td>
+                                                        <td><span class="label label-important">@item.Parent.Name</span></td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>*@
+                        </fieldset>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-info">Save changes</button>
+                            <button class="btn btn-warning">Cancel</button>
+                        </div>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@Scripts.Render("~/bundles/jqueryval")

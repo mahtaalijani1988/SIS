@@ -1,0 +1,75 @@
+﻿@using Student_Information_System.Extentions.Helpers
+@model DbModel.ViewModel.Election.SetScoreViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<script src="~/Content/js/jquery-1.10.2.js"></script>
+
+
+
+<ul class="breadcrumb">
+    <li><a href="#">Home</a><span class="divider">&raquo;</span></li>
+    <li><a href="#">Grading</a><span class="divider">&raquo;</span></li>
+    <li class="active">Grading My Students</li>
+</ul>
+<div class="row-fluid">
+    <div class="span ">
+        <div class="nonboxy-widget">
+            <div class="widget-head">
+                <h5>Grading My Students</h5>
+            </div>
+            <div class="widget-content">
+                <div class="widget-box">
+                    @using (Html.BeginForm("SetGrad", "Grading", FormMethod.Post, new { @class = "form-horizontal well ucase" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
+
+                        <fieldset>
+                            <legend>Grade Information</legend>
+
+                            <div class="control-group">
+                                <label class="control-label">Student Name</label>
+                                <div class="controls">
+                                    <input type="text" class="input-small" readonly value="@Model.Student.FirstName @Model.Student.LastName">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Corse</label>
+                                <div class="controls">
+                                    <input type="text" class="input-small" readonly value="@Model.PeresentedCource.Course.Name">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Grade</label>
+                                <div class="controls">
+
+                                    @*@Html.DropDownList("TermId", ViewBag.AllTerms as IEnumerable<SelectListItem>,
+                                        new { @class = "selectpicker" })*@
+
+                                    @Html.DropDownList("scores", new SelectList(new[] { "------------", "A+", "A", "A-",
+                                        "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-", "F" },
+                                        ViewBag.SSS/*Html.ConvertToScoreTodrs(Model.Score)*/ ),
+                                        new { @class = "selectpicker" })
+                                    
+                                    @*<input type="text" class="input-large" id="LastName" name="LastName">*@
+                                    @*@Html.EditorFor(model => model.Score, "", new { @class = "input-large" })
+                                    @Html.ValidationMessageFor(model => model.Score, "", new { @class = "help-inline" })*@
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-info">Save changes</button>
+                            <button class="btn btn-warning">Cancel</button>
+                        </div>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@Scripts.Render("~/bundles/jqueryval")

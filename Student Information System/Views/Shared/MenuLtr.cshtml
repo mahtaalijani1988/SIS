@@ -1,0 +1,158 @@
+﻿@using Student_Information_System
+@{
+    ViewBag.Title = "RightSlideMenu";
+
+}
+
+<!-- TOP Menu -->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner top-nav">
+        <div class="container-fluid">
+            <div class="branding">
+                @*<div class="logo">
+                        <a href="index">
+                            <img src="~/Content/img/logo.jpg" width="168" height="40" alt="Logo">
+                        </a>
+                    </div>*@
+            </div>
+            <ul class="nav pull-right">
+                @Html.Partial("_LoginPartial")
+            </ul>
+            <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            <div class="nav-collapse collapse">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Top Menu -->
+<!-- Left Menu -->
+<div id="sidebar">
+    <ul class="side-nav accordion_mnu collapsible">
+        <li>
+            <a href="~/Home/Index"><span class="white-icons computer_imac"></span> Home</a>
+        </li>
+        @if (Request.IsAuthenticated && User.IsInRole("admin"))
+        {
+        <li>
+            <a href="#"><span class="white-icons list"></span> Term</a>
+            <ul class="acitem">
+                <li><a href="~/Term/Index"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>All Terms</a></li>
+                <li><a href="~/Term/Add"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>Add Term</a></li>
+            </ul>
+        </li>
+        }
+        @if (Request.IsAuthenticated && User.IsInRole("admin"))
+        {
+        <li>
+            <a href="#"><span class="white-icons cup"></span>Course</a>
+            <ul class="acitem">
+                <li><a href="~/Course/Index"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>All Courses</a></li>
+                <li><a href="~/Course/Add"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>Add Course</a></li>
+            </ul>
+        </li>
+        }
+        @if (Request.IsAuthenticated && User.IsInRole("admin"))
+        {
+        <li>
+            <a href="#"><span class="white-icons cup"></span>Department</a>
+            <ul class="acitem">
+                <li><a href="~/Department/Index"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>All Department</a></li>
+                <li><a href="~/Department/Add"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>Add Department</a></li>
+            </ul>
+        </li>
+        }
+        @if (Request.IsAuthenticated && User.IsInRole("admin"))
+        {
+        <li>
+            <a href="#"><span class="white-icons cup"></span>Available Courses</a>
+            <ul class="acitem">
+                <li><a href="~/AvailableCourses/Index"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>All Available Courses</a></li>
+                <li><a href="~/AvailableCourses/Add"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>Add Available Courses</a></li>
+            </ul>
+        </li>
+        }
+        @if (Request.IsAuthenticated && User.IsInRole("admin"))
+        {
+        <li>
+            <a href="#"><span class="white-icons cup"></span>Group Course</a>
+            <ul class="acitem">
+                <li><a href="~/GroupCourse/Index"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>All GroupCourse</a></li>
+                <li><a href="~/GroupCourse/Add"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>Add GroupCourse</a></li>
+            </ul>
+        </li>
+        }
+        @if (Request.IsAuthenticated && (User.IsInRole("admin") || User.IsInRole("student")))
+        {
+        <li>
+            <a href="#"><span class="white-icons shuffle"></span>Enrolment</a>
+            <ul class="acitem">
+                @if (Request.IsAuthenticated && User.IsInRole("admin"))
+                {
+                    <li><a href="~/Enrolment/Index"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>All Enrolment</a></li>
+                }
+                @if (Request.IsAuthenticated && User.IsInRole("student"))
+                {
+                    <li><a href="~/Enrolment/Add"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>Register For Courses</a></li>
+                    <li><a href="~/Enrolment/Remove"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>Remove Courses</a></li>
+                }
+            </ul>
+        </li>
+        }
+        @if (Request.IsAuthenticated)
+        {
+        <li>
+            <a href="#"><span class="white-icons shuffle"></span>Grading</a>
+            <ul class="acitem">
+                @if (Request.IsAuthenticated && User.IsInRole("professor"))
+                {
+                    <li><a href="~/Grading/Index"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>Grading My Students</a></li>
+                }
+                @if (Request.IsAuthenticated && User.IsInRole("student"))
+                {
+                    <li><a href="~/Grading/IndexMyGrads"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>View My Grades</a></li>
+                    <li><a href="~/Grading/IndexKolGrads"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>View My Transcripts</a></li>
+                }
+            </ul>
+        </li>
+        }
+        @if (Request.IsAuthenticated && User.IsInRole("admin"))
+        {
+        <li>
+            <a href="#"><span class="white-icons shuffle"></span> Student</a>
+            <ul class="acitem">
+                <li><a href="~/Student/Index"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>All Students</a></li>
+                <li><a href="~/Student/Add"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>Create New Student</a></li>
+            </ul>
+        </li>
+        }
+        @if (Request.IsAuthenticated && User.IsInRole("admin"))
+        {
+        <li>
+            <a href="#"><span class="white-icons shuffle"></span> Professor</a>
+            <ul class="acitem">
+                <li><a href="~/Professor/Index"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>All Professor</a></li>
+                <li><a href="~/Professor/Add"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>Create New Professor</a></li>
+            </ul>
+        </li>
+        }
+        @if (Request.IsAuthenticated && User.IsInRole("admin"))
+        {
+        <li>
+            <a href="#"><span class="white-icons shuffle"></span> User Management</a>
+            <ul class="acitem">
+                <li><a href="~/Customer/Index"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>All Users</a></li>
+                <li><a href="~/Customer/Create"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>Create New User</a></li>
+            </ul>
+        </li>
+        }
+        @if (Request.IsAuthenticated && User.IsInRole("admin"))
+        {
+        <li>
+            <a href="#"><span class="white-icons shuffle"></span>Settings</a>
+            <ul class="acitem">
+                <li><a href="~/Configuration/Edit"><span class="sidenav-icon"><span class="sidenav-link-color"></span></span>All Settings</a></li>
+            </ul>
+        </li>
+        }
+    </ul>
+</div>

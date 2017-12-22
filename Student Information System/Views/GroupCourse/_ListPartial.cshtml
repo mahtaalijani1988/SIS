@@ -1,0 +1,87 @@
+﻿
+@using DbModel.DomainClasses.Enums
+@using PagedList
+@using PagedList.Mvc
+@using DbModel.ViewModel.GroupCourse
+@model GroupCourseListVM
+@Html.AntiForgeryToken()
+<table class="table table-striped" id="GroupCourseTable">
+    <thead>
+        <tr>
+            <th>Course Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var advs in Model.GroupCourseList)
+        {
+            <tr>
+                <td>
+                    <span class="label label-important">
+                        @if(advs.Course_Id.HasValue)
+                        {
+                            @advs.Course.Name
+                        }
+                    </span>
+                </td>
+                <td>
+                    <div class="btn-group pull-right">
+                        <button data-toggle="dropdown" class="btn dropdown-toggle">
+                            <i class="icon-cog"></i>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/GroupCourse/Edit/@advs.Id"><i class="icon-file"></i> Edit</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" id="row-@advs.Id"><i class="icon-trash"></i> Delete</a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="widget-content">
+    <div class="widget-box">
+        @using (Ajax.BeginForm("List", "GroupCourse", null, new AjaxOptions
+        {
+            HttpMethod = "POST",
+            InsertionMode = InsertionMode.Replace,
+            UpdateTargetId = "GroupCourseList"
+        }, new { @class = "well form-inline", id = "GroupCourseFilterForm" }))
+        {
+            @Html.Hidden("term", Model.Term)
+            @*@Html.Hidden("courseSearchBy", ViewBag.courseSearchBy as string)*@
+            @*@Html.DropDownList("courseOrderBy", ViewBag.courseOrderByList as IEnumerable<SelectListItem>, new { @class = "form-control" })*@
+            @Html.DropDownList("order", ViewBag.OrderList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+            @Html.DropDownList("count", ViewBag.CountList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+
+            <button class="btn">
+                <i class="icon-key bigger-110"></i>
+                Sort By
+            </button>
+        }
+    </div>
+</div>
+@Html.PagedListPager(new StaticPagedList<GroupCourseViewModel>(Model.GroupCourseList, Model.PageNumber,
+    Model.PageCount, Model.TotalGroupCourses),
+    pageNumber => Url.Action("List", "GroupCourse", new
+    {
+        term = Model.Term,
+        page = pageNumber,
+        count = Model.PageCount,
+        order = Model.Order
+    }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(PagedListRenderOptions.ClassicPlusFirstAndLast,
+                new AjaxOptions
+                {
+                    AllowCache = false,
+                    HttpMethod = "GET",
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "GroupCourseList"
+                }
+))
+<script>
+    Public.Routin();
+</script>
+

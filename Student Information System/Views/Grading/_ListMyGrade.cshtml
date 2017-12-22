@@ -1,0 +1,120 @@
+﻿@using Student_Information_System.Extentions.Helpers
+@using DbModel.DomainClasses.Enums
+@using PagedList
+@using PagedList.Mvc
+@using DbModel.ViewModel.Election
+@model ScoreListVM
+@Html.AntiForgeryToken()
+<div class="span ">
+    <div class="nonboxy-widget">
+        <div class="widget-head">
+            <h5>Student Information</h5>
+        </div>
+        <div class="widget-content">
+            <div class="widget-box" id="ElectionList1">
+                <table class="table table-striped" id="ElectionTable1">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Term Name</th>
+                            <th>Average</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (ViewBag.avglist != null)
+                        {
+                            foreach (var advs in ViewBag.avglist as IEnumerable<AverageClass>)
+                            {
+                                <tr>
+
+                                    <td><span class="label label-important">@advs.Student.FirstName @advs.Student.LastName</span></td>
+                                    <td><span class="label label-important">@advs.Term.Name</span></td>
+                                    <td><span class="label label-important">@advs.Average</span></td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="span12 ">
+    <div class="widget-block">
+        <div class="widget-head">
+            <h5>View My Grades</h5>
+        </div>
+        <div class="widget-content">
+            <div class="widget-box" id="ElectionList">
+                <table class="table table-striped" id="ElectionTable">
+                    <thead>
+                        <tr>
+                            <th>Term</th>                            
+                            <th>Professor</th>
+                            <th>Grade</th>
+                            <th>Cource</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var advs in Model.ScoreList)
+                        {
+                            <tr>
+                                <td><span class="label label-important">@advs.PeresentedCource.Term.Name</span></td>
+                                <td><span class="label label-important">@advs.PeresentedCource.Professor.FirstName @advs.PeresentedCource.Professor.LastName</span></td>
+                                <td><span class="label label-important">@Html.ConvertToScoreTodrs(advs.Score)</span></td>
+                                <td><span class="label label-important">@advs.PeresentedCource.Course.Name</span></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<div class="widget-content">
+    <div class="widget-box">
+        @using (Ajax.BeginForm("ListMyGrade", "Grading", null, new AjaxOptions
+        {
+            HttpMethod = "POST",
+            InsertionMode = InsertionMode.Replace,
+            UpdateTargetId = "GradingList"
+        }, new { @class = "well form-inline", id = "GradingFilterForm" }))
+        {
+            @Html.Hidden("term", Model.Term)
+            @Html.DropDownList("order", ViewBag.OrderList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+            @Html.DropDownList("count", ViewBag.CountList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+
+            <button class="btn">
+                <i class="icon-key bigger-110"></i>
+                Sort By
+            </button>
+        }
+    </div>
+</div>*@
+@Html.PagedListPager(new StaticPagedList<ScoreViewModel>(Model.ScoreList, Model.PageNumber,
+    Model.PageCount, Model.TotalElections),
+    pageNumber => Url.Action("ListMyGrade", "Grading", new
+    {
+        term = Model.Term,
+        page = pageNumber,
+        count = Model.PageCount,
+        order = Model.Order,
+        objSearchBy = Model.ScoreStateType,
+        objOrderBy = Model.ElectionOrderBy,
+        //categoryId = Model.CategoryId,
+        //deleted = Model.Deleted,
+        //freeSend = Model.FreeSend
+    }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(PagedListRenderOptions.ClassicPlusFirstAndLast,
+                new AjaxOptions
+                {
+                    AllowCache = false,
+                    HttpMethod = "GET",
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "GradingList"
+                }
+))
+<script>
+    Public.Routin();
+</script>
+

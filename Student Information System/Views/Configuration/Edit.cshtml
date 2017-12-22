@@ -1,0 +1,203 @@
+﻿@model DbModel.ViewModel.Setting.EditSettingViewModel
+@{
+    ViewBag.Title = "Update Settings";
+}
+<!-- Include DatePicker Required Prerequisites -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+<script src="~/Content/date/moment.min.js"></script>
+
+<link href="~/Content/bootstrap-timepicker/timepicker/bootstrap-timepicker.min.css" rel="stylesheet" />
+
+<ul class="breadcrumb">
+    <li><a href="#">Home</a><span class="divider">&raquo;</span></li>
+    <li><a href="#">Settings</a><span class="divider">&raquo;</span></li>
+    <li class="active">Update Settings</li>
+</ul>
+<div class="row-fluid">
+    <div class="span ">
+        <div class="nonboxy-widget">
+            @*<div class="widget-head">
+                <h5>Create New Term</h5>
+            </div>*@
+            <div class="widget-content">
+                <div class="widget-box">
+                    @using (Html.BeginForm("Edit", "Configuration", FormMethod.Post, new { @class = "form-horizontal well ucase" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
+
+                        <fieldset>
+                            <legend>Form</legend>
+                            <div class="control-group">
+                                <label class="control-label">Department Name</label>
+                                <div class="controls">
+                                    <input type="text" id="Department_Name" name="Department_Name" class="input-large" value="@Model.Department_Name">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Choose Election Term</label>
+                                <div class="controls">                                   
+                                    @Html.DropDownListFor(model => model.Term_Id, ViewBag.AllTerms as IEnumerable<SelectListItem>,
+                                        ".....................", new { @class = "selectpicker" })
+                                    @Html.ValidationMessageFor(model => model.Term_Id, "", new { @class = "text-danger" })
+                                    @*@Html.DropDownListFor(model => model.Term_Id, ViewBag.AllTerms as IEnumerable<SelectListItem>,
+                                         new { @class = "selectpicker" })*@
+                                    @*@Html.DropDownListFor(m => m.Term_Id,
+                           new SelectList(ViewBag.AllTerms as IEnumerable<SelectListItem>,"Value", "Text"))*@
+                                    @Html.ValidationMessageFor(model => model.Term_Id, "", new { @class = "text-danger" })
+                                </div>
+                                @ViewBag.vv
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Election Term Start Date</label>
+                                <div class="controls">
+                                    <input type="text" class="form-control" id="Start_Election_Date" name="Start_Election_Date" value="@Model.Start_Election_Date">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Election Term Start Time</label>
+                                <div class="controls">
+                                    <div class="bootstrap-timepicker">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control timepicker" id="Start_Election_Time" name="Start_Election_Time" value="@Model.Start_Election_Time">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-clock-o"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Election Term End Date</label>
+                                <div class="controls">
+                                    <input type="text" class="form-control" id="End_Election_Date" name="End_Election_Date" value="@Model.End_Election_Date">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Election Term End Time</label>
+                                <div class="controls">
+                                    <div class="bootstrap-timepicker">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control timepicker" id="End_Election_Time" name="End_Election_Time" value="@Model.End_Election_Time">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-clock-o"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Remove Election Term Start Date</label>
+                                <div class="controls">
+                                    <input type="text" class="form-control" id="Start_Remove_Date" name="Start_Remove_Date" value="@Model.Start_Remove_Date">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Remove Election Term Start Time</label>
+                                <div class="controls">
+                                    <div class="bootstrap-timepicker">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control timepicker" id="Start_Remove_Time" name="Start_Remove_Time" value="@Model.Start_Remove_Time">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-clock-o"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Remove Election Term End Date</label>
+                                <div class="controls">
+                                    <input type="text" class="form-control" id="End_Remove_Date" name="End_Remove_Date" value="@Model.End_Remove_Date">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Remove Election Term End Time</label>
+                                <div class="controls">
+                                    <div class="bootstrap-timepicker">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control timepicker" id="End_Remove_Time" name="End_Remove_Time" value="@Model.End_Remove_Time">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-clock-o"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Student max Unit</label>
+                                <div class="controls">
+                                    <input type="text" class="form-control" id="Student_max_Unit" name="Student_max_Unit" value="@Model.Student_max_Unit">
+                                    @Html.ValidationMessageFor(model => model.Student_max_Unit, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-info">Save changes</button>
+                            <button class="btn btn-warning">Cancel</button>
+                        </div>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Content/bootstrap-timepicker/timepicker/bootstrap-timepicker.min.js"></script>
+
+
+<!-- Include DatePicker Picker -->
+<script src="~/Content/date/daterangepicker.js"></script>
+<link href="~/Content/date/daterangepicker.css" rel="stylesheet" />
+<script>
+    $('input[name="Start_Election_Date"]').daterangepicker({
+        //defaultDate: "11/1/2013",
+        singleDatePicker: true,
+        showDropdowns: true,
+        timePicker: {
+            enabled: true
+        }
+    });
+    $('input[name="End_Election_Date"]').daterangepicker({
+        //defaultDate: "11/1/2013",
+        singleDatePicker: true,
+        showDropdowns: true,
+        timePicker: {
+            enabled: true
+        }
+    });
+    $('input[name="Start_Remove_Date"]').daterangepicker({
+        //defaultDate: "11/1/2013",
+        singleDatePicker: true,
+        showDropdowns: true,
+        timePicker: {
+            enabled: true
+        }
+    });
+    $('input[name="End_Remove_Date"]').daterangepicker({
+        //defaultDate: "11/1/2013",
+        singleDatePicker: true,
+        showDropdowns: true,
+        timePicker: {
+            enabled: true
+        }
+    });
+
+
+    //Timepicker
+    $('input[name="Start_Election_Time"]').timepicker({
+        showInputs: true
+    })
+    $('input[name="End_Election_Time"]').timepicker({
+        showInputs: false
+    })
+    $('input[name="Start_Remove_Time"]').timepicker({
+        showInputs: true
+    })
+    $('input[name="End_Remove_Time"]').timepicker({
+        showInputs: false
+    })
+</script>
+@Scripts.Render("~/bundles/jqueryval")

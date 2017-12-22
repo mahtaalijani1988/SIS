@@ -1,0 +1,196 @@
+﻿@model DbModel.ViewModel.Election.AddElectionViewModel
+@using DbModel.DomainClasses.Entities;
+@using DbModel.ViewModel.Election;
+@{
+    ViewBag.Title = "Create";
+}
+
+<script src="~/Content/js/jquery-1.10.2.js"></script>
+
+
+
+<ul class="breadcrumb">
+    <li><a href="#">Home</a><span class="divider">&raquo;</span></li>
+    <li><a href="#">Enrolment</a><span class="divider">&raquo;</span></li>
+    <li class="active">Create New Enrolment</li>
+</ul>
+<div class="row-fluid">
+    <div class="span ">
+        <div class="nonboxy-widget">
+            <div class="widget-head">
+                <h5>Student Information</h5>
+            </div>
+            <div class="widget-content">
+                <div class="widget-box">
+                    <div class="well form-inline">
+                        <fieldset>
+                            <legend>Student Information Form</legend>
+                            <div class="control-group">
+                                <label class="control-label">First Name</label>
+                                    <input type="text" class="input-small" readonly value="@ViewBag.fname">
+                                <label class="control-label">Last Name</label>
+                                    <input type="text" class="input-small" readonly value="@ViewBag.lname">
+                                <label class="control-label">Student.NO</label>
+                                    <input type="text" class="input-small" readonly value="@ViewBag.sno">
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Term</label>
+                                    <input type="text" class="input-small" readonly value="@ViewBag.TermName">
+                            </div>
+
+                         @*now :   @ViewBag.now <br />
+                         start :   @ViewBag.start <br />
+                         end :   @ViewBag.end <br />
+                            state :   @ViewBag.state*@
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="span ">
+        <div class="nonboxy-widget">
+            <div class="widget-head">
+                <h5>Create New Enrolment</h5>
+            </div>
+            <div class="widget-content">
+                <div class="widget-box">
+                    @using (Html.BeginForm("Create", "Enrolment", FormMethod.Post, new { @class = "form-horizontal well ucase" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
+
+                        <fieldset>
+                            <legend>Enrolment Information</legend>
+                            <div class="control-group">
+                                    <label class="control-label">Available Cources</label>
+                            </div>
+                            <div>
+                                        <table class="table order-tbl" id="EnrollmentTable124">
+                                            <thead>
+                                                <tr>
+                                                    <th>Course Name</th>
+                                                    <th>Cource Capacity</th>
+                                                    <th>Cource Unit</th>
+                                                    <th>Prerequisite</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (ViewBag.prlist != null)
+                                                {
+                                                foreach (var item in ViewBag.prlist as IEnumerable<PeresentedCourses>)
+                                                {
+                                                    <tr>
+                                                        @*<td class="center"><input type="checkbox" name="ch_@item.Id"></td>*@
+                                                        <td><span class="label label-important">@item.Course.Name</span></td>
+                                                        <td><span class="label label-important">@item.Capacity</span></td>
+                                                        <td><span class="label label-important">@item.Course.Unit</span></td>
+                                                        <td><span class="label label-important">@item.Professor.FirstName @item.Professor.LastName</span></td>
+                                                        <td>
+                                                            <div class="btn-group pull-right">
+                                                                <button data-toggle="dropdown" class="btn dropdown-toggle">
+                                                                    <i class="icon-cog"></i>
+                                                                    <span class="caret"></span>
+                                                                </button>
+                                                                <ul class="dropdown-menu">
+                                                                    <li><a href="#" id="row-@item.Id"><i class="icon-trash"></i> Select</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                                }
+                                            </tbody>
+                                        </table>
+                                </div>
+
+
+                            <div class="control-group">
+                                <label class="control-label">Student Choosed Cources</label>
+                            </div>
+                            <div>
+                                <table class="table order-tbl" id="EnrollmentTable120004">
+                                    <thead>
+                                        <tr>
+                                            <th>Course Name</th>
+                                            <th>Professor</th>
+                                            <th>Score</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @if (ViewBag.usersellist != null)
+                                        {
+                                        foreach (var item in ViewBag.usersellist as IEnumerable<ElectionViewModel>)
+                                        {
+                                            <tr>
+                                                @*<td class="center"><input type="checkbox" name="ch_@item.Id"></td>*@
+                                                <td><span class="label label-important">@item.PeresentedCource.Course.Name</span></td>
+                                                <td><span class="label label-important">@item.PeresentedCource.Professor.FirstName @item.PeresentedCource.Professor.LastName</span></td>
+                                                <td><span class="label label-important">@item.Score</span></td>
+                                            </tr>
+                                        }
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </fieldset>
+                        @*<div class="form-actions">
+                            <button type="submit" class="btn btn-info">Select</button>
+                            <button class="btn btn-warning">Cancel</button>
+                        </div>*@
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@Scripts.Render("~/bundles/jqueryval")
+
+@section JavaScript
+{
+    <script>
+        $(function () {
+            $(document).on("click", "a[id^='row']", function (e) {
+                e.stopPropagation();
+                var span = $(this);
+                var id = span.attr('id').replace('row-', '');
+                //swal("ok"+id);
+                swal({
+                    title: "Are You Sure?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonClass: "btn btn-md btn-danger",
+                    confirmButtonText: "OK",
+                    cancelButtonText: "Cancel",
+                    closeOnConfirm: false
+                },
+                   function (confirmed) {
+                if (confirmed) {
+                    $.ajax({
+                        url: '@Url.Action("SelectElectionCource")',
+                        data: { "id": id }
+                    })
+                     .done(function (data) {
+                        sweetAlert({
+                            title: "Election Result!",
+                            text: data.msg,//"Your Record was successfully Answered!",//
+                            type: "success"
+                            },function () {
+                                  window.location.href = window.location;
+                            });
+                     })
+                     .error(function (data) {
+                           swal("Oops", "We couldn't connect to the server!", "error");
+                     });
+                }
+            });
+            });
+        });
+    </script>
+}

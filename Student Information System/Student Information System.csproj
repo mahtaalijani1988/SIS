@@ -1,0 +1,1256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{389063F9-CE59-47B0-AB2B-C94B56C4F145}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Student_Information_System</RootNamespace>
+    <AssemblyName>Student Information System</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac, Version=3.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=3.3.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="CaptchaMvc, Version=2.5.0.0, Culture=neutral, PublicKeyToken=fe46ad421dd3b0e6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\CaptchaMvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DataAnnotationsExtensions, Version=1.1.0.0, Culture=neutral, PublicKeyToken=358a5681c50fd84c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DataAnnotationsExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DataAnnotationsExtensions.ClientValidation, Version=1.1.0.0, Culture=neutral, PublicKeyToken=358a5681c50fd84c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DataAnnotationsExtensions.ClientValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="DbModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DbModel.dll</HintPath>
+    </Reference>
+    <Reference Include="DevTrends.MvcDonutCaching, Version=1.3.0.0, Culture=neutral, PublicKeyToken=73c58d802958a09f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DevTrends.MvcDonutCaching.dll</HintPath>
+    </Reference>
+    <Reference Include="EFSecondLevelCache, Version=1.1.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\EFSecondLevelCache.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah.Mvc, Version=2.0.0.29988, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Elmah.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\EntityFramework.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageResizer, Version=3.4.3.103, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ImageResizer.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageResizer.Mvc, Version=3.4.3.103, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ImageResizer.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageResizer.Plugins.DiskCache, Version=3.4.3.103, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ImageResizer.Plugins.DiskCache.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageResizer.Plugins.PrettyGifs, Version=3.4.3.103, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ImageResizer.Plugins.PrettyGifs.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Analyzers, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Lucene.Net.Contrib.Analyzers.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Core, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Lucene.Net.Contrib.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.FastVectorHighlighter, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Lucene.Net.Contrib.FastVectorHighlighter.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Highlighter, Version=2.3.2.1, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Lucene.Net.Contrib.Highlighter.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Memory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Lucene.Net.Contrib.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Queries, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Lucene.Net.Contrib.Queries.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Regex, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Lucene.Net.Contrib.Regex.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.SimpleFacetedSearch, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Lucene.Net.Contrib.SimpleFacetedSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.Snowball, Version=2.0.0.1, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Lucene.Net.Contrib.Snowball.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net.Contrib.SpellChecker, Version=3.0.3.0, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Lucene.Net.Contrib.SpellChecker.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MiniProfiler, Version=3.1.1.140, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\MiniProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcSiteMapProvider, Version=4.6.18.0, Culture=neutral, PublicKeyToken=1923abe4657913cc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\MvcSiteMapProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcSiteMapProvider.WebActivator, Version=4.6.18.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\MvcSiteMapProvider.WebActivator.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Persia, Version=3.0.4727.38582, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Persia.dll</HintPath>
+    </Reference>
+    <Reference Include="PersianDateTime, Version=1.1.5082.36395, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\PersianDateTime.dll</HintPath>
+    </Reference>
+    <Reference Include="Simple.ImageResizer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Simple.ImageResizer.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap, Version=3.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.Net4, Version=3.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\StructureMap.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.Web, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\StructureMap.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Mvc, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="T4MVCExtensions, Version=3.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\T4MVCExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="VikingErik.Mvc.ResumingActionResults, Version=1.0.5181.42826, Culture=neutral, PublicKeyToken=9ae9bdee523dbbda, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\VikingErik.Mvc.ResumingActionResults.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivator, Version=1.4.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\WebActivator.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionFilters\TurbolinksAttribute.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\PreApplicationStart.cs" />
+    <Compile Include="App_Start\RegisterClientValidationExtensions.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ConfigurationController.cs" />
+    <Compile Include="Controllers\CourseController.cs" />
+    <Compile Include="Controllers\GroupCourseController.cs" />
+    <Compile Include="Controllers\DepartmentController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\EnrolmentController.cs" />
+    <Compile Include="Controllers\AvailableCoursesController.cs" />
+    <Compile Include="Controllers\GradingController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\Student_Information_SystemController.cs" />
+    <Compile Include="Controllers\ProfessorController.cs" />
+    <Compile Include="Controllers\TermController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Extentions\Caching\CacheManager.cs" />
+    <Compile Include="Extentions\Caching\CacheService.cs" />
+    <Compile Include="Extentions\Caching\ICacheService.cs" />
+    <Compile Include="Extentions\Caching\Student_Information_SystemCache.cs" />
+    <Compile Include="Extentions\CookieHelper.cs" />
+    <Compile Include="Extentions\DI\Autofac\Modules\MvcModule.cs" />
+    <Compile Include="Extentions\DI\Autofac\Modules\MvcSiteMapProviderModule.cs" />
+    <Compile Include="Extentions\DI\CommonConventions.cs" />
+    <Compile Include="Extentions\Filters\AjaxOnlyAttribute.cs" />
+    <Compile Include="Extentions\Filters\AllowUploadSpecialFilesAttribute.cs" />
+    <Compile Include="Extentions\Filters\DosAttackModule.cs" />
+    <Compile Include="Extentions\Filters\ElmahHandledErrorLoggerFilter.cs" />
+    <Compile Include="Extentions\Filters\ForceWww.cs" />
+    <Compile Include="Extentions\Filters\SiteAuthorizeAttribute.cs" />
+    <Compile Include="Extentions\Filters\TurbolinksAttribute.cs" />
+    <Compile Include="Extentions\Helpers\AjaxDialog.cs" />
+    <Compile Include="Extentions\Helpers\Alert.cs" />
+    <Compile Include="Extentions\Helpers\DialogOptions.cs" />
+    <Compile Include="Extentions\Helpers\DropDown.cs" />
+    <Compile Include="Extentions\Helpers\EnumHelper.cs" />
+    <Compile Include="Extentions\Helpers\FileUpload.cs" />
+    <Compile Include="Extentions\Helpers\HtmlHelper.cs" />
+    <Compile Include="Extentions\Helpers\JsonNetResult.cs" />
+    <Compile Include="Extentions\Helpers\JsonNetValueProviderFactory.cs" />
+    <Compile Include="Extentions\Helpers\ScoreValues.cs" />
+    <Compile Include="Extentions\Helpers\SeoExtentions.cs" />
+    <Compile Include="Extentions\Helpers\TreeView.cs" />
+    <Compile Include="Extentions\Helpers\UrlGenerator.cs" />
+    <Compile Include="Extentions\Helpers\UserAvatarHelper.cs" />
+    <Compile Include="Extentions\HtmlCleaner\AntiXssModule.cs" />
+    <Compile Include="Extentions\HtmlCleaner\HtmlSanitizer.cs" />
+    <Compile Include="Extentions\HtmlCleaner\PersianProofWriter.cs" />
+    <Compile Include="Extentions\Infrastructure\AvatarImage.cs" />
+    <Compile Include="Extentions\Infrastructure\CacheManager.cs" />
+    <Compile Include="Extentions\Infrastructure\ForceWww.cs" />
+    <Compile Include="Extentions\Infrastructure\IViewConvertor.cs" />
+    <Compile Include="Extentions\Infrastructure\ViewConvertor.cs" />
+    <Compile Include="Extentions\JsonHelper.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Lucene_Index\tmp.txt" />
+    <Content Include="Content\bootstrap-timepicker\js\bootstrap-timepicker.js" />
+    <Content Include="Content\bootstrap-timepicker\timepicker\bootstrap-timepicker.css" />
+    <Content Include="Content\bootstrap-timepicker\timepicker\bootstrap-timepicker.js" />
+    <Content Include="Content\bootstrap-timepicker\timepicker\bootstrap-timepicker.min.css" />
+    <Content Include="Content\bootstrap-timepicker\timepicker\bootstrap-timepicker.min.js" />
+    <Content Include="Content\Calendar\js-persian-cal.min.js" />
+    <Content Include="Content\Calendar\jspc-peach.css" />
+    <Content Include="Content\Calendar\pcal.png" />
+    <Content Include="Content\css\bootstrap-responsive-rtl.css" />
+    <Content Include="Content\css\bootstrap-responsive.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap_rtl.css" />
+    <Content Include="Content\css\data-table.css" />
+    <Content Include="Content\css\elfinder.min.css" />
+    <Content Include="Content\css\elfinder.theme.css" />
+    <Content Include="Content\css\fullcalendar.css" />
+    <Content Include="Content\css\icons-sprite.css" />
+    <Content Include="Content\css\ie\ie7.css" />
+    <Content Include="Content\css\ie\ie8.css" />
+    <Content Include="Content\css\ie\ie9.css" />
+    <Content Include="Content\css\jquery-ui-1.8.16.custom.css" />
+    <Content Include="Content\css\jquery.jqplot.css" />
+    <Content Include="Content\css\prettify.css" />
+    <Content Include="Content\css\styles.css" />
+    <Content Include="Content\css\stylesrtl.css" />
+    <Content Include="Content\css\theme-blue.css" />
+    <Content Include="Content\css\theme-chayam.css" />
+    <Content Include="Content\css\theme-chrome.css" />
+    <Content Include="Content\css\theme-dark.css" />
+    <Content Include="Content\css\theme-default.css" />
+    <Content Include="Content\css\theme-gray.css" />
+    <Content Include="Content\css\theme-light-blue.css" />
+    <Content Include="Content\css\theme-orange.css" />
+    <Content Include="Content\css\theme-pink.css" />
+    <Content Include="Content\css\themes.css" />
+    <Content Include="Content\data\ajax-response.html" />
+    <Content Include="Content\data\ajax-stepy.html" />
+    <Content Include="Content\data\ajax.html" />
+    <Content Include="Content\data\flash.html" />
+    <Content Include="Content\data\homer.jpg" />
+    <Content Include="Content\data\marylou.jpg" />
+    <Content Include="Content\data\ohoopee1.jpg" />
+    <Content Include="Content\data\ohoopee2.jpg" />
+    <Content Include="Content\data\ohoopee3.jpg" />
+    <Content Include="Content\date\daterangepicker.css" />
+    <Content Include="Content\date\daterangepicker.js" />
+    <Content Include="Content\date\moment.min.js" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\ico\apple-touch-icon-114-precomposed.png" />
+    <Content Include="Content\ico\apple-touch-icon-144-precomposed.png" />
+    <Content Include="Content\ico\apple-touch-icon-57-precomposed.png" />
+    <Content Include="Content\ico\apple-touch-icon-72-precomposed.png" />
+    <Content Include="Content\ico\favicon.ico" />
+    <Content Include="Content\img\1shadi.jpg" />
+    <Content Include="Content\img\alert.png" />
+    <Content Include="Content\img\alpha.png" />
+    <Content Include="Content\img\arrows-active.png" />
+    <Content Include="Content\img\arrows-normal.png" />
+    <Content Include="Content\img\bg.png" />
+    <Content Include="Content\img\bubble.png" />
+    <Content Include="Content\img\buttons.gif" />
+    <Content Include="Content\img\chart.png" />
+    <Content Include="Content\img\checked.png" />
+    <Content Include="Content\img\chosen-sprite.png" />
+    <Content Include="Content\img\closed.png" />
+    <Content Include="Content\img\collapse.gif" />
+    <Content Include="Content\img\colorbox-img\border.png" />
+    <Content Include="Content\img\colorbox-img\controls.png" />
+    <Content Include="Content\img\colorbox-img\ie6\borderBottomCenter.png" />
+    <Content Include="Content\img\colorbox-img\ie6\borderBottomLeft.png" />
+    <Content Include="Content\img\colorbox-img\ie6\borderBottomRight.png" />
+    <Content Include="Content\img\colorbox-img\ie6\borderMiddleLeft.png" />
+    <Content Include="Content\img\colorbox-img\ie6\borderMiddleRight.png" />
+    <Content Include="Content\img\colorbox-img\ie6\borderTopCenter.png" />
+    <Content Include="Content\img\colorbox-img\ie6\borderTopLeft.png" />
+    <Content Include="Content\img\colorbox-img\ie6\borderTopRight.png" />
+    <Content Include="Content\img\colorbox-img\loading.gif" />
+    <Content Include="Content\img\colorbox-img\loading_background.png" />
+    <Content Include="Content\img\colorbox-img\overlay.png" />
+    <Content Include="Content\img\complete.png" />
+    <Content Include="Content\img\crop.gif" />
+    <Content Include="Content\img\delete.png" />
+    <Content Include="Content\img\dialogs.png" />
+    <Content Include="Content\img\down.png" />
+    <Content Include="Content\img\flag-icons\ad.png" />
+    <Content Include="Content\img\flag-icons\ae.png" />
+    <Content Include="Content\img\flag-icons\af.png" />
+    <Content Include="Content\img\flag-icons\ag.png" />
+    <Content Include="Content\img\flag-icons\ai.png" />
+    <Content Include="Content\img\flag-icons\al.png" />
+    <Content Include="Content\img\flag-icons\am.png" />
+    <Content Include="Content\img\flag-icons\an.png" />
+    <Content Include="Content\img\flag-icons\ao.png" />
+    <Content Include="Content\img\flag-icons\ar.png" />
+    <Content Include="Content\img\flag-icons\as.png" />
+    <Content Include="Content\img\flag-icons\at.png" />
+    <Content Include="Content\img\flag-icons\au.png" />
+    <Content Include="Content\img\flag-icons\aw.png" />
+    <Content Include="Content\img\flag-icons\ax.png" />
+    <Content Include="Content\img\flag-icons\az.png" />
+    <Content Include="Content\img\flag-icons\ba.png" />
+    <Content Include="Content\img\flag-icons\bb.png" />
+    <Content Include="Content\img\flag-icons\bd.png" />
+    <Content Include="Content\img\flag-icons\be.png" />
+    <Content Include="Content\img\flag-icons\bf.png" />
+    <Content Include="Content\img\flag-icons\bg.png" />
+    <Content Include="Content\img\flag-icons\bh.png" />
+    <Content Include="Content\img\flag-icons\bi.png" />
+    <Content Include="Content\img\flag-icons\bj.png" />
+    <Content Include="Content\img\flag-icons\bm.png" />
+    <Content Include="Content\img\flag-icons\bn.png" />
+    <Content Include="Content\img\flag-icons\bo.png" />
+    <Content Include="Content\img\flag-icons\br.png" />
+    <Content Include="Content\img\flag-icons\bs.png" />
+    <Content Include="Content\img\flag-icons\bt.png" />
+    <Content Include="Content\img\flag-icons\bv.png" />
+    <Content Include="Content\img\flag-icons\bw.png" />
+    <Content Include="Content\img\flag-icons\by.png" />
+    <Content Include="Content\img\flag-icons\bz.png" />
+    <Content Include="Content\img\flag-icons\ca.png" />
+    <Content Include="Content\img\flag-icons\catalonia.png" />
+    <Content Include="Content\img\flag-icons\cc.png" />
+    <Content Include="Content\img\flag-icons\cd.png" />
+    <Content Include="Content\img\flag-icons\cf.png" />
+    <Content Include="Content\img\flag-icons\cg.png" />
+    <Content Include="Content\img\flag-icons\ch.png" />
+    <Content Include="Content\img\flag-icons\ci.png" />
+    <Content Include="Content\img\flag-icons\ck.png" />
+    <Content Include="Content\img\flag-icons\cl.png" />
+    <Content Include="Content\img\flag-icons\cm.png" />
+    <Content Include="Content\img\flag-icons\cn.png" />
+    <Content Include="Content\img\flag-icons\co.png" />
+    <Content Include="Content\img\flag-icons\cr.png" />
+    <Content Include="Content\img\flag-icons\cs.png" />
+    <Content Include="Content\img\flag-icons\cu.png" />
+    <Content Include="Content\img\flag-icons\cv.png" />
+    <Content Include="Content\img\flag-icons\cx.png" />
+    <Content Include="Content\img\flag-icons\cy.png" />
+    <Content Include="Content\img\flag-icons\cz.png" />
+    <Content Include="Content\img\flag-icons\de.png" />
+    <Content Include="Content\img\flag-icons\dj.png" />
+    <Content Include="Content\img\flag-icons\dk.png" />
+    <Content Include="Content\img\flag-icons\dm.png" />
+    <Content Include="Content\img\flag-icons\do.png" />
+    <Content Include="Content\img\flag-icons\dz.png" />
+    <Content Include="Content\img\flag-icons\ec.png" />
+    <Content Include="Content\img\flag-icons\ee.png" />
+    <Content Include="Content\img\flag-icons\eg.png" />
+    <Content Include="Content\img\flag-icons\eh.png" />
+    <Content Include="Content\img\flag-icons\england.png" />
+    <Content Include="Content\img\flag-icons\er.png" />
+    <Content Include="Content\img\flag-icons\es.png" />
+    <Content Include="Content\img\flag-icons\et.png" />
+    <Content Include="Content\img\flag-icons\europeanunion.png" />
+    <Content Include="Content\img\flag-icons\fam.png" />
+    <Content Include="Content\img\flag-icons\fi.png" />
+    <Content Include="Content\img\flag-icons\fj.png" />
+    <Content Include="Content\img\flag-icons\fk.png" />
+    <Content Include="Content\img\flag-icons\fm.png" />
+    <Content Include="Content\img\flag-icons\fo.png" />
+    <Content Include="Content\img\flag-icons\fr.png" />
+    <Content Include="Content\img\flag-icons\ga.png" />
+    <Content Include="Content\img\flag-icons\gb.png" />
+    <Content Include="Content\img\flag-icons\gd.png" />
+    <Content Include="Content\img\flag-icons\ge.png" />
+    <Content Include="Content\img\flag-icons\gf.png" />
+    <Content Include="Content\img\flag-icons\gh.png" />
+    <Content Include="Content\img\flag-icons\gi.png" />
+    <Content Include="Content\img\flag-icons\gl.png" />
+    <Content Include="Content\img\flag-icons\gm.png" />
+    <Content Include="Content\img\flag-icons\gn.png" />
+    <Content Include="Content\img\flag-icons\gp.png" />
+    <Content Include="Content\img\flag-icons\gq.png" />
+    <Content Include="Content\img\flag-icons\gr.png" />
+    <Content Include="Content\img\flag-icons\gs.png" />
+    <Content Include="Content\img\flag-icons\gt.png" />
+    <Content Include="Content\img\flag-icons\gu.png" />
+    <Content Include="Content\img\flag-icons\gw.png" />
+    <Content Include="Content\img\flag-icons\gy.png" />
+    <Content Include="Content\img\flag-icons\hk.png" />
+    <Content Include="Content\img\flag-icons\hm.png" />
+    <Content Include="Content\img\flag-icons\hn.png" />
+    <Content Include="Content\img\flag-icons\hr.png" />
+    <Content Include="Content\img\flag-icons\ht.png" />
+    <Content Include="Content\img\flag-icons\hu.png" />
+    <Content Include="Content\img\flag-icons\id.png" />
+    <Content Include="Content\img\flag-icons\ie.png" />
+    <Content Include="Content\img\flag-icons\il.png" />
+    <Content Include="Content\img\flag-icons\in.png" />
+    <Content Include="Content\img\flag-icons\io.png" />
+    <Content Include="Content\img\flag-icons\iq.png" />
+    <Content Include="Content\img\flag-icons\ir.png" />
+    <Content Include="Content\img\flag-icons\is.png" />
+    <Content Include="Content\img\flag-icons\it.png" />
+    <Content Include="Content\img\flag-icons\jm.png" />
+    <Content Include="Content\img\flag-icons\jo.png" />
+    <Content Include="Content\img\flag-icons\jp.png" />
+    <Content Include="Content\img\flag-icons\ke.png" />
+    <Content Include="Content\img\flag-icons\kg.png" />
+    <Content Include="Content\img\flag-icons\kh.png" />
+    <Content Include="Content\img\flag-icons\ki.png" />
+    <Content Include="Content\img\flag-icons\km.png" />
+    <Content Include="Content\img\flag-icons\kn.png" />
+    <Content Include="Content\img\flag-icons\kp.png" />
+    <Content Include="Content\img\flag-icons\kr.png" />
+    <Content Include="Content\img\flag-icons\kw.png" />
+    <Content Include="Content\img\flag-icons\ky.png" />
+    <Content Include="Content\img\flag-icons\kz.png" />
+    <Content Include="Content\img\flag-icons\la.png" />
+    <Content Include="Content\img\flag-icons\lb.png" />
+    <Content Include="Content\img\flag-icons\lc.png" />
+    <Content Include="Content\img\flag-icons\li.png" />
+    <Content Include="Content\img\flag-icons\lk.png" />
+    <Content Include="Content\img\flag-icons\lr.png" />
+    <Content Include="Content\img\flag-icons\ls.png" />
+    <Content Include="Content\img\flag-icons\lt.png" />
+    <Content Include="Content\img\flag-icons\lu.png" />
+    <Content Include="Content\img\flag-icons\lv.png" />
+    <Content Include="Content\img\flag-icons\ly.png" />
+    <Content Include="Content\img\flag-icons\ma.png" />
+    <Content Include="Content\img\flag-icons\mc.png" />
+    <Content Include="Content\img\flag-icons\md.png" />
+    <Content Include="Content\img\flag-icons\me.png" />
+    <Content Include="Content\img\flag-icons\mg.png" />
+    <Content Include="Content\img\flag-icons\mh.png" />
+    <Content Include="Content\img\flag-icons\mk.png" />
+    <Content Include="Content\img\flag-icons\ml.png" />
+    <Content Include="Content\img\flag-icons\mm.png" />
+    <Content Include="Content\img\flag-icons\mn.png" />
+    <Content Include="Content\img\flag-icons\mo.png" />
+    <Content Include="Content\img\flag-icons\mp.png" />
+    <Content Include="Content\img\flag-icons\mq.png" />
+    <Content Include="Content\img\flag-icons\mr.png" />
+    <Content Include="Content\img\flag-icons\ms.png" />
+    <Content Include="Content\img\flag-icons\mt.png" />
+    <Content Include="Content\img\flag-icons\mu.png" />
+    <Content Include="Content\img\flag-icons\mv.png" />
+    <Content Include="Content\img\flag-icons\mw.png" />
+    <Content Include="Content\img\flag-icons\mx.png" />
+    <Content Include="Content\img\flag-icons\my.png" />
+    <Content Include="Content\img\flag-icons\mz.png" />
+    <Content Include="Content\img\flag-icons\na.png" />
+    <Content Include="Content\img\flag-icons\nc.png" />
+    <Content Include="Content\img\flag-icons\ne.png" />
+    <Content Include="Content\img\flag-icons\nf.png" />
+    <Content Include="Content\img\flag-icons\ng.png" />
+    <Content Include="Content\img\flag-icons\ni.png" />
+    <Content Include="Content\img\flag-icons\nl.png" />
+    <Content Include="Content\img\flag-icons\no.png" />
+    <Content Include="Content\img\flag-icons\np.png" />
+    <Content Include="Content\img\flag-icons\nr.png" />
+    <Content Include="Content\img\flag-icons\nu.png" />
+    <Content Include="Content\img\flag-icons\nz.png" />
+    <Content Include="Content\img\flag-icons\om.png" />
+    <Content Include="Content\img\flag-icons\pa.png" />
+    <Content Include="Content\img\flag-icons\pe.png" />
+    <Content Include="Content\img\flag-icons\pf.png" />
+    <Content Include="Content\img\flag-icons\pg.png" />
+    <Content Include="Content\img\flag-icons\ph.png" />
+    <Content Include="Content\img\flag-icons\pk.png" />
+    <Content Include="Content\img\flag-icons\pl.png" />
+    <Content Include="Content\img\flag-icons\pm.png" />
+    <Content Include="Content\img\flag-icons\pn.png" />
+    <Content Include="Content\img\flag-icons\pr.png" />
+    <Content Include="Content\img\flag-icons\ps.png" />
+    <Content Include="Content\img\flag-icons\pt.png" />
+    <Content Include="Content\img\flag-icons\pw.png" />
+    <Content Include="Content\img\flag-icons\py.png" />
+    <Content Include="Content\img\flag-icons\qa.png" />
+    <Content Include="Content\img\flag-icons\re.png" />
+    <Content Include="Content\img\flag-icons\ro.png" />
+    <Content Include="Content\img\flag-icons\rs.png" />
+    <Content Include="Content\img\flag-icons\ru.png" />
+    <Content Include="Content\img\flag-icons\rw.png" />
+    <Content Include="Content\img\flag-icons\sa.png" />
+    <Content Include="Content\img\flag-icons\sb.png" />
+    <Content Include="Content\img\flag-icons\sc.png" />
+    <Content Include="Content\img\flag-icons\scotland.png" />
+    <Content Include="Content\img\flag-icons\sd.png" />
+    <Content Include="Content\img\flag-icons\se.png" />
+    <Content Include="Content\img\flag-icons\sg.png" />
+    <Content Include="Content\img\flag-icons\sh.png" />
+    <Content Include="Content\img\flag-icons\si.png" />
+    <Content Include="Content\img\flag-icons\sj.png" />
+    <Content Include="Content\img\flag-icons\sk.png" />
+    <Content Include="Content\img\flag-icons\sl.png" />
+    <Content Include="Content\img\flag-icons\sm.png" />
+    <Content Include="Content\img\flag-icons\sn.png" />
+    <Content Include="Content\img\flag-icons\so.png" />
+    <Content Include="Content\img\flag-icons\sr.png" />
+    <Content Include="Content\img\flag-icons\st.png" />
+    <Content Include="Content\img\flag-icons\sv.png" />
+    <Content Include="Content\img\flag-icons\sy.png" />
+    <Content Include="Content\img\flag-icons\sz.png" />
+    <Content Include="Content\img\flag-icons\tc.png" />
+    <Content Include="Content\img\flag-icons\td.png" />
+    <Content Include="Content\img\flag-icons\tf.png" />
+    <Content Include="Content\img\flag-icons\tg.png" />
+    <Content Include="Content\img\flag-icons\th.png" />
+    <Content Include="Content\img\flag-icons\tj.png" />
+    <Content Include="Content\img\flag-icons\tk.png" />
+    <Content Include="Content\img\flag-icons\tl.png" />
+    <Content Include="Content\img\flag-icons\tm.png" />
+    <Content Include="Content\img\flag-icons\tn.png" />
+    <Content Include="Content\img\flag-icons\to.png" />
+    <Content Include="Content\img\flag-icons\tr.png" />
+    <Content Include="Content\img\flag-icons\tt.png" />
+    <Content Include="Content\img\flag-icons\tv.png" />
+    <Content Include="Content\img\flag-icons\tw.png" />
+    <Content Include="Content\img\flag-icons\tz.png" />
+    <Content Include="Content\img\flag-icons\ua.png" />
+    <Content Include="Content\img\flag-icons\ug.png" />
+    <Content Include="Content\img\flag-icons\um.png" />
+    <Content Include="Content\img\flag-icons\us.png" />
+    <Content Include="Content\img\flag-icons\uy.png" />
+    <Content Include="Content\img\flag-icons\uz.png" />
+    <Content Include="Content\img\flag-icons\va.png" />
+    <Content Include="Content\img\flag-icons\vc.png" />
+    <Content Include="Content\img\flag-icons\ve.png" />
+    <Content Include="Content\img\flag-icons\vg.png" />
+    <Content Include="Content\img\flag-icons\vi.png" />
+    <Content Include="Content\img\flag-icons\vn.png" />
+    <Content Include="Content\img\flag-icons\vu.png" />
+    <Content Include="Content\img\flag-icons\wales.png" />
+    <Content Include="Content\img\flag-icons\wf.png" />
+    <Content Include="Content\img\flag-icons\ws.png" />
+    <Content Include="Content\img\flag-icons\ye.png" />
+    <Content Include="Content\img\flag-icons\yt.png" />
+    <Content Include="Content\img\flag-icons\za.png" />
+    <Content Include="Content\img\flag-icons\zm.png" />
+    <Content Include="Content\img\flag-icons\zw.png" />
+    <Content Include="Content\img\flag-uk.png" />
+    <Content Include="Content\img\footer-back.jpg" />
+    <Content Include="Content\img\furley_bg.png" />
+    <Content Include="Content\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\img\glyphicons-halflings.png" />
+    <Content Include="Content\img\go.png" />
+    <Content Include="Content\img\green-arrow.png" />
+    <Content Include="Content\img\home.jpg" />
+    <Content Include="Content\img\hue.png" />
+    <Content Include="Content\img\IconHome.gif" />
+    <Content Include="Content\img\icons-big.png" />
+    <Content Include="Content\img\icons-small.png" />
+    <Content Include="Content\img\img-raty\cancel-off-big.png" />
+    <Content Include="Content\img\img-raty\cancel-off.png" />
+    <Content Include="Content\img\img-raty\cancel-on-big.png" />
+    <Content Include="Content\img\img-raty\cancel-on.png" />
+    <Content Include="Content\img\img-raty\face-a-off.png" />
+    <Content Include="Content\img\img-raty\face-a.png" />
+    <Content Include="Content\img\img-raty\face-b-off.png" />
+    <Content Include="Content\img\img-raty\face-b.png" />
+    <Content Include="Content\img\img-raty\face-c-off.png" />
+    <Content Include="Content\img\img-raty\face-c.png" />
+    <Content Include="Content\img\img-raty\face-d-off.png" />
+    <Content Include="Content\img\img-raty\face-d.png" />
+    <Content Include="Content\img\img-raty\face-off.png" />
+    <Content Include="Content\img\img-raty\medal-off.png" />
+    <Content Include="Content\img\img-raty\medal-on.png" />
+    <Content Include="Content\img\img-raty\star-half-big.png" />
+    <Content Include="Content\img\img-raty\star-half.png" />
+    <Content Include="Content\img\img-raty\star-off-big.png" />
+    <Content Include="Content\img\img-raty\star-off.png" />
+    <Content Include="Content\img\img-raty\star-on-big.png" />
+    <Content Include="Content\img\img-raty\star-on.png" />
+    <Content Include="Content\img\items.png" />
+    <Content Include="Content\img\lightpaperfibers.png" />
+    <Content Include="Content\img\light_toast.png" />
+    <Content Include="Content\img\light_wool.png" />
+    <Content Include="Content\img\list-icons\alarm.png" />
+    <Content Include="Content\img\list-icons\ask.png" />
+    <Content Include="Content\img\list-icons\award.png" />
+    <Content Include="Content\img\list-icons\bulb.png" />
+    <Content Include="Content\img\list-icons\clip.png" />
+    <Content Include="Content\img\list-icons\err.png" />
+    <Content Include="Content\img\list-icons\flag.png" />
+    <Content Include="Content\img\list-icons\folder.png" />
+    <Content Include="Content\img\list-icons\globe.png" />
+    <Content Include="Content\img\list-icons\heart.png" />
+    <Content Include="Content\img\list-icons\info.png" />
+    <Content Include="Content\img\list-icons\medal-gold.png" />
+    <Content Include="Content\img\list-icons\pin.png" />
+    <Content Include="Content\img\list-icons\plus.png" />
+    <Content Include="Content\img\list-icons\tick.png" />
+    <Content Include="Content\img\list-icons\trophy.png" />
+    <Content Include="Content\img\loader.gif" />
+    <Content Include="Content\img\loading.gif" />
+    <Content Include="Content\img\logo %282%29.png" />
+    <Content Include="Content\img\logo.jpg" />
+    <Content Include="Content\img\logo5.jpg" />
+    <Content Include="Content\img\Main.jpg" />
+    <Content Include="Content\img\open.png" />
+    <Content Include="Content\img\orders.png" />
+    <Content Include="Content\img\page-back.jpg" />
+    <Content Include="Content\img\posts.png" />
+    <Content Include="Content\img\progress.gif" />
+    <Content Include="Content\img\progress.png" />
+    <Content Include="Content\img\progressbar.gif" />
+    <Content Include="Content\img\quicklook-bg.png" />
+    <Content Include="Content\img\quicklook-icons.png" />
+    <Content Include="Content\img\red-arrow.png" />
+    <Content Include="Content\img\resize.png" />
+    <Content Include="Content\img\saturation.png" />
+    <Content Include="Content\img\search-box.png" />
+    <Content Include="Content\img\search-icon.png" />
+    <Content Include="Content\img\search-text-box.png" />
+    <Content Include="Content\img\shipped.png" />
+    <Content Include="Content\img\sidenav-sprite.png" />
+    <Content Include="Content\img\spinner-mini.gif" />
+    <Content Include="Content\img\sprite-icons\action-sprite.png" />
+    <Content Include="Content\img\sprite-icons\actions-small.png" />
+    <Content Include="Content\img\sprite-icons\cs_h.png" />
+    <Content Include="Content\img\sprite-icons\dashboard-icons-dark.png" />
+    <Content Include="Content\img\sprite-icons\extras\icon16_color_cr.png" />
+    <Content Include="Content\img\sprite-icons\extras\icon24x24black.png" />
+    <Content Include="Content\img\sprite-icons\extras\icon32x32black.png" />
+    <Content Include="Content\img\sprite-icons\extras\icon_grb24x24.png" />
+    <Content Include="Content\img\sprite-icons\icon-black.png" />
+    <Content Include="Content\img\sprite-icons\icons-a.png" />
+    <Content Include="Content\img\sprite-icons\icons-color.png" />
+    <Content Include="Content\img\sprite-icons\icons-glossy.png" />
+    <Content Include="Content\img\sprite-icons\icon_sl.png" />
+    <Content Include="Content\img\sprite-icons\uniform-sprite.png" />
+    <Content Include="Content\img\sprite-icons\white-icons.png" />
+    <Content Include="Content\img\table-tools\background.png" />
+    <Content Include="Content\img\table-tools\collection.png" />
+    <Content Include="Content\img\table-tools\collection_hover.png" />
+    <Content Include="Content\img\table-tools\copy.png" />
+    <Content Include="Content\img\table-tools\copy_hover.png" />
+    <Content Include="Content\img\table-tools\csv.png" />
+    <Content Include="Content\img\table-tools\csv_hover.png" />
+    <Content Include="Content\img\table-tools\pdf.png" />
+    <Content Include="Content\img\table-tools\pdf_hover.png" />
+    <Content Include="Content\img\table-tools\print.png" />
+    <Content Include="Content\img\table-tools\print_hover.png" />
+    <Content Include="Content\img\table-tools\xls.png" />
+    <Content Include="Content\img\table-tools\xls_hover.png" />
+    <Content Include="Content\img\table.gif" />
+    <Content Include="Content\img\tbl-img\back_disabled.png" />
+    <Content Include="Content\img\tbl-img\back_enabled.png" />
+    <Content Include="Content\img\tbl-img\back_enabled_hover.png" />
+    <Content Include="Content\img\tbl-img\forward_disabled.png" />
+    <Content Include="Content\img\tbl-img\forward_enabled.png" />
+    <Content Include="Content\img\tbl-img\forward_enabled_hover.png" />
+    <Content Include="Content\img\tbl-img\sort_asc.png" />
+    <Content Include="Content\img\tbl-img\sort_asc_disabled.png" />
+    <Content Include="Content\img\tbl-img\sort_both.png" />
+    <Content Include="Content\img\tbl-img\sort_desc.png" />
+    <Content Include="Content\img\tbl-img\sort_desc_disabled.png" />
+    <Content Include="Content\img\toolbar.gif" />
+    <Content Include="Content\img\toolbar.png" />
+    <Content Include="Content\img\ui\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\img\ui\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\img\ui\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\img\ui\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\img\ui\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\img\ui\ui-bg_glass_75_ffffff_1x400.png" />
+    <Content Include="Content\img\ui\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\img\ui\ui-bg_inset-soft_95_fef1ec_1x100.png" />
+    <Content Include="Content\img\ui\ui-icons_222222_256x240.png" />
+    <Content Include="Content\img\ui\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\img\ui\ui-icons_454545_256x240.png" />
+    <Content Include="Content\img\ui\ui-icons_888888_256x240.png" />
+    <Content Include="Content\img\ui\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\img\ui\ui-icons_f6cf3b_256x240.png" />
+    <Content Include="Content\img\up.png" />
+    <Content Include="Content\img\user-accounts.png" />
+    <Content Include="Content\img\user-thumb.png" />
+    <Content Include="Content\img\white_bed_sheet.png" />
+    <Content Include="Content\js\accordion.jquery.js" />
+    <Content Include="Content\js\bootstrap.js" />
+    <Content Include="Content\js\chart\jqplot.barRenderer.js" />
+    <Content Include="Content\js\chart\jqplot.barRenderer.min.js" />
+    <Content Include="Content\js\chart\jqplot.BezierCurveRenderer.js" />
+    <Content Include="Content\js\chart\jqplot.BezierCurveRenderer.min.js" />
+    <Content Include="Content\js\chart\jqplot.blockRenderer.js" />
+    <Content Include="Content\js\chart\jqplot.blockRenderer.min.js" />
+    <Content Include="Content\js\chart\jqplot.bubbleRenderer.js" />
+    <Content Include="Content\js\chart\jqplot.bubbleRenderer.min.js" />
+    <Content Include="Content\js\chart\jqplot.canvasAxisLabelRenderer.js" />
+    <Content Include="Content\js\chart\jqplot.canvasAxisLabelRenderer.min.js" />
+    <Content Include="Content\js\chart\jqplot.canvasAxisTickRenderer.js" />
+    <Content Include="Content\js\chart\jqplot.canvasAxisTickRenderer.min.js" />
+    <Content Include="Content\js\chart\jqplot.canvasOverlay.js" />
+    <Content Include="Content\js\chart\jqplot.canvasOverlay.min.js" />
+    <Content Include="Content\js\chart\jqplot.canvasTextRenderer.js" />
+    <Content Include="Content\js\chart\jqplot.canvasTextRenderer.min.js" />
+    <Content Include="Content\js\chart\jqplot.categoryAxisRenderer.js" />
+    <Content Include="Content\js\chart\jqplot.categoryAxisRenderer.min.js" />
+    <Content Include="Content\js\chart\jqplot.ciParser.js" />
+    <Content Include="Content\js\chart\jqplot.ciParser.min.js" />
+    <Content Include="Content\js\chart\jqplot.cursor.js" />
+    <Content Include="Content\js\chart\jqplot.cursor.min.js" />
+    <Content Include="Content\js\chart\jqplot.dateAxisRenderer.js" />
+    <Content Include="Content\js\chart\jqplot.dateAxisRenderer.min.js" />
+    <Content Include="Content\js\chart\jqplot.donutRenderer.js" />
+    <Content Include="Content\js\chart\jqplot.donutRenderer.min.js" />
+    <Content Include="Content\js\chart\jqplot.dragable.js" />
+    <Content Include="Content\js\chart\jqplot.dragable.min.js" />
+    <Content Include="Content\js\chart\jqplot.enhancedLegendRenderer.js" />
+    <Content Include="Content\js\chart\jqplot.enhancedLegendRenderer.min.js" />
+    <Content Include="Content\js\chart\jqplot.funnelRenderer.js" />
+    <Content Include="Content\js\chart\jqplot.funnelRenderer.min.js" />
+    <Content Include="Content\js\chart\jqplot.highlighter.js" />
+    <Content Include="Content\js\chart\jqplot.highlighter.min.js" />
+    <Content Include="Content\js\chart\jqplot.json2.js" />
+    <Content Include="Content\js\chart\jqplot.json2.min.js" />
+    <Content Include="Content\js\chart\jqplot.logAxisRenderer.js" />
+    <Content Include="Content\js\chart\jqplot.logAxisRenderer.min.js" />
+    <Content Include="Content\js\chart\jqplot.mekkoAxisRenderer.js" />
+    <Content Include="Content\js\chart\jqplot.mekkoAxisRenderer.min.js" />
+    <Content Include="Content\js\chart\jqplot.mekkoRenderer.js" />
+    <Content Include="Content\js\chart\jqplot.mekkoRenderer.min.js" />
+    <Content Include="Content\js\chart\jqplot.meterGaugeRenderer.js" />
+    <Content Include="Content\js\chart\jqplot.meterGaugeRenderer.min.js" />
+    <Content Include="Content\js\chart\jqplot.ohlcRenderer.js" />
+    <Content Include="Content\js\chart\jqplot.ohlcRenderer.min.js" />
+    <Content Include="Content\js\chart\jqplot.pieRenderer.js" />
+    <Content Include="Content\js\chart\jqplot.pieRenderer.min.js" />
+    <Content Include="Content\js\chart\jqplot.pointLabels.js" />
+    <Content Include="Content\js\chart\jqplot.pointLabels.min.js" />
+    <Content Include="Content\js\chart\jqplot.pyramidAxisRenderer.js" />
+    <Content Include="Content\js\chart\jqplot.pyramidAxisRenderer.min.js" />
+    <Content Include="Content\js\chart\jqplot.pyramidGridRenderer.js" />
+    <Content Include="Content\js\chart\jqplot.pyramidGridRenderer.min.js" />
+    <Content Include="Content\js\chart\jqplot.pyramidRenderer.js" />
+    <Content Include="Content\js\chart\jqplot.pyramidRenderer.min.js" />
+    <Content Include="Content\js\chart\jqplot.trendline.js" />
+    <Content Include="Content\js\chart\jqplot.trendline.min.js" />
+    <Content Include="Content\js\check-all.jquery.js" />
+    <Content Include="Content\js\chosen.jquery.js" />
+    <Content Include="Content\js\ColVis.min.js" />
+    <Content Include="Content\js\css3-mediaqueries.js" />
+    <Content Include="Content\js\custom-script.js" />
+    <Content Include="Content\js\data-table.jquery.js" />
+    <Content Include="Content\js\elfinder\elfinder.min.js" />
+    <Content Include="Content\js\elfinder\i18n\elfinder.ar.js" />
+    <Content Include="Content\js\elfinder\i18n\elfinder.bg.js" />
+    <Content Include="Content\js\elfinder\i18n\elfinder.ca.js" />
+    <Content Include="Content\js\elfinder\i18n\elfinder.cs.js" />
+    <Content Include="Content\js\elfinder\i18n\elfinder.de.js" />
+    <Content Include="Content\js\elfinder\i18n\elfinder.es.js" />
+    <Content Include="Content\js\elfinder\i18n\elfinder.fr.js" />
+    <Content Include="Content\js\elfinder\i18n\elfinder.hu.js" />
+    <Content Include="Content\js\elfinder\i18n\elfinder.jp.js" />
+    <Content Include="Content\js\elfinder\i18n\elfinder.LANG.js" />
+    <Content Include="Content\js\elfinder\i18n\elfinder.nl.js" />
+    <Content Include="Content\js\elfinder\i18n\elfinder.no.js" />
+    <Content Include="Content\js\elfinder\i18n\elfinder.pl.js" />
+    <Content Include="Content\js\elfinder\i18n\elfinder.pt_BR.js" />
+    <Content Include="Content\js\elfinder\i18n\elfinder.ru.js" />
+    <Content Include="Content\js\elfinder\i18n\elfinder.zh_CN.js" />
+    <Content Include="Content\js\excanvas.min.js" />
+    <Content Include="Content\js\fullcalendar.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\adapters\standalone-framework.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\adapters\standalone-framework.src.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\highcharts-3d.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\highcharts-3d.src.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\highcharts-all.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\highcharts-more.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\highcharts-more.src.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\highcharts.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\highcharts.src.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\jdate.min.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\modules\canvas-tools.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\modules\canvas-tools.src.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\modules\data.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\modules\data.src.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\modules\drilldown.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\modules\drilldown.src.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\modules\exporting.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\modules\exporting.src.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\modules\funnel.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\modules\funnel.src.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\modules\heatmap.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\modules\heatmap.src.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\modules\no-data-to-display.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\modules\no-data-to-display.src.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\modules\solid-gauge.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\modules\solid-gauge.src.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\themes\dark-blue.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\themes\dark-green.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\themes\dark-unica.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\themes\gray.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\themes\grid-light.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\themes\grid.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\themes\sand-signika.js" />
+    <Content Include="Content\js\Highcharts-4.0.1\js\themes\skies.js" />
+    <Content Include="Content\js\inputmask.jquery.js" />
+    <Content Include="Content\js\ios-orientationchange-fix.js" />
+    <Content Include="Content\js\jquery-1.10.2.js" />
+    <Content Include="Content\js\jquery-dynamic-form.js" />
+    <Content Include="Content\js\jquery-ui-1.8.16.custom.min.js" />
+    <Content Include="Content\js\jquery-ui-1.8.17.custom.min.js" />
+    <Content Include="Content\js\jquery-ui-1.8.22.custom.min.js" />
+    <Content Include="Content\js\jquery.cleditor.min.js" />
+    <Content Include="Content\js\jquery.cleditor.table.js" />
+    <Content Include="Content\js\jquery.collapse.js" />
+    <Content Include="Content\js\jquery.colorbox-min.js" />
+    <Content Include="Content\js\jquery.jBreadCrumb.1.1.js" />
+    <Content Include="Content\js\jquery.jqplot.min.js" />
+    <Content Include="Content\js\jquery.js" />
+    <Content Include="Content\js\jquery.multiFieldExtender.min.js" />
+    <Content Include="Content\js\jquery.nicescroll.min.js" />
+    <Content Include="Content\js\jquery.noty.js" />
+    <Content Include="Content\js\jquery.overscroll.min.js" />
+    <Content Include="Content\js\jquery.sparkline.min.js" />
+    <Content Include="Content\js\jquery.tagsinput.js" />
+    <Content Include="Content\js\jquery.ui.touch-punch.js" />
+    <Content Include="Content\js\my_wizard_2.js" />
+    <Content Include="Content\js\my_wizard_Editation_1.js" />
+    <Content Include="Content\js\my_wizard_Edition_2.js" />
+    <Content Include="Content\js\my_wizard_validation.js" />
+    <Content Include="Content\js\nicEdit.js" />
+    <Content Include="Content\js\plupload.full.js" />
+    <Content Include="Content\js\plupupload\i18n\cs.js" />
+    <Content Include="Content\js\plupupload\i18n\da.js" />
+    <Content Include="Content\js\plupupload\i18n\de.js" />
+    <Content Include="Content\js\plupupload\i18n\el.js" />
+    <Content Include="Content\js\plupupload\i18n\es.js" />
+    <Content Include="Content\js\plupupload\i18n\et.js" />
+    <Content Include="Content\js\plupupload\i18n\fa.js" />
+    <Content Include="Content\js\plupupload\i18n\fi.js" />
+    <Content Include="Content\js\plupupload\i18n\fr-ca.js" />
+    <Content Include="Content\js\plupupload\i18n\fr.js" />
+    <Content Include="Content\js\plupupload\i18n\hr.js" />
+    <Content Include="Content\js\plupupload\i18n\hu.js" />
+    <Content Include="Content\js\plupupload\i18n\it.js" />
+    <Content Include="Content\js\plupupload\i18n\ja.js" />
+    <Content Include="Content\js\plupupload\i18n\ko.js" />
+    <Content Include="Content\js\plupupload\i18n\lv.js" />
+    <Content Include="Content\js\plupupload\i18n\nl.js" />
+    <Content Include="Content\js\plupupload\i18n\pl.js" />
+    <Content Include="Content\js\plupupload\i18n\pt-br.js" />
+    <Content Include="Content\js\plupupload\i18n\ro.js" />
+    <Content Include="Content\js\plupupload\i18n\ru.js" />
+    <Content Include="Content\js\plupupload\i18n\sr.js" />
+    <Content Include="Content\js\plupupload\i18n\sv.js" />
+    <Content Include="Content\js\plupupload\jquery.plupload.queue\css\jquery.plupload.queue.css" />
+    <Content Include="Content\js\plupupload\jquery.plupload.queue\img\backgrounds.gif" />
+    <Content Include="Content\js\plupupload\jquery.plupload.queue\img\buttons-disabled.png" />
+    <Content Include="Content\js\plupupload\jquery.plupload.queue\img\buttons.png" />
+    <Content Include="Content\js\plupupload\jquery.plupload.queue\img\delete.gif" />
+    <Content Include="Content\js\plupupload\jquery.plupload.queue\img\done.gif" />
+    <Content Include="Content\js\plupupload\jquery.plupload.queue\img\error.gif" />
+    <Content Include="Content\js\plupupload\jquery.plupload.queue\img\throbber.gif" />
+    <Content Include="Content\js\plupupload\jquery.plupload.queue\img\transp50.png" />
+    <Content Include="Content\js\plupupload\jquery.plupload.queue\jquery.plupload.queue.js" />
+    <Content Include="Content\js\plupupload\jquery.ui.plupload\css\jquery.ui.plupload.css" />
+    <Content Include="Content\js\plupupload\jquery.ui.plupload\img\plupload-bw.png" />
+    <Content Include="Content\js\plupupload\jquery.ui.plupload\img\plupload.png" />
+    <Content Include="Content\js\plupupload\jquery.ui.plupload\jquery.ui.plupload.js" />
+    <Content Include="Content\js\plupupload\plupload.browserplus.js" />
+    <Content Include="Content\js\plupupload\plupload.flash.js" />
+    <Content Include="Content\js\plupupload\plupload.flash.swf" />
+    <Content Include="Content\js\plupupload\plupload.full.js" />
+    <Content Include="Content\js\plupupload\plupload.gears.js" />
+    <Content Include="Content\js\plupupload\plupload.html4.js" />
+    <Content Include="Content\js\plupupload\plupload.html5.js" />
+    <Content Include="Content\js\plupupload\plupload.js" />
+    <Content Include="Content\js\plupupload\plupload.silverlight.js" />
+    <Content Include="Content\js\prettify.js" />
+    <Content Include="Content\js\raty.jquery.js" />
+    <Content Include="Content\js\respond.min.js" />
+    <Content Include="Content\js\smart-wizard.jquery.js" />
+    <Content Include="Content\js\TableTools.min.js" />
+    <Content Include="Content\js\uniform.jquery.js" />
+    <Content Include="Content\js\vaidation.jquery.js" />
+    <Content Include="Content\js\Validation\jquery.unobtrusive-ajax.js" />
+    <Content Include="Content\js\Validation\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="ApplicationInsights.config" />
+    <Content Include="App_Data\Lucene_Index\segments.gen" />
+    <Content Include="App_Data\Lucene_Index\segments_4k" />
+    <Content Include="App_Data\Lucene_Index\_6f.fdt" />
+    <Content Include="App_Data\Lucene_Index\_6f.fdx" />
+    <Content Include="App_Data\Lucene_Index\_6f.fnm" />
+    <Content Include="App_Data\Lucene_Index\_6f.frq" />
+    <Content Include="App_Data\Lucene_Index\_6f.nrm" />
+    <Content Include="App_Data\Lucene_Index\_6f.prx" />
+    <Content Include="App_Data\Lucene_Index\_6f.tii" />
+    <Content Include="App_Data\Lucene_Index\_6f.tis" />
+    <Content Include="App_Data\Lucene_Index\_6f.tvd" />
+    <Content Include="App_Data\Lucene_Index\_6f.tvf" />
+    <Content Include="App_Data\Lucene_Index\_6f.tvx" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\bootstrap-timepicker\css\timepicker.less" />
+    <None Include="Content\js\Validation\jquery.validate-vsdoc.js" />
+    <Content Include="Content\js\Validation\jquery.validate.js" />
+    <Content Include="Content\js\Validation\jquery.validate.min.js" />
+    <Content Include="Content\js\Validation\jquery.validate.unobtrusive.js" />
+    <Content Include="Content\js\Validation\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Content\js\Validation\jqueryval-default.js" />
+    <Content Include="Content\js\Validation\jqueryval-default.min.js" />
+    <Content Include="Content\plupload\i18n\ar.js" />
+    <Content Include="Content\plupload\i18n\bs.js" />
+    <Content Include="Content\plupload\i18n\ca.js" />
+    <Content Include="Content\plupload\i18n\cs.js" />
+    <Content Include="Content\plupload\i18n\cy.js" />
+    <Content Include="Content\plupload\i18n\da.js" />
+    <Content Include="Content\plupload\i18n\de.js" />
+    <Content Include="Content\plupload\i18n\el.js" />
+    <Content Include="Content\plupload\i18n\en.js" />
+    <Content Include="Content\plupload\i18n\es.js" />
+    <Content Include="Content\plupload\i18n\et.js" />
+    <Content Include="Content\plupload\i18n\fa.js" />
+    <Content Include="Content\plupload\i18n\fi.js" />
+    <Content Include="Content\plupload\i18n\fr.js" />
+    <Content Include="Content\plupload\i18n\he.js" />
+    <Content Include="Content\plupload\i18n\hr.js" />
+    <Content Include="Content\plupload\i18n\hu.js" />
+    <Content Include="Content\plupload\i18n\hy.js" />
+    <Content Include="Content\plupload\i18n\id.js" />
+    <Content Include="Content\plupload\i18n\it.js" />
+    <Content Include="Content\plupload\i18n\ja.js" />
+    <Content Include="Content\plupload\i18n\ka.js" />
+    <Content Include="Content\plupload\i18n\kk.js" />
+    <Content Include="Content\plupload\i18n\ko.js" />
+    <Content Include="Content\plupload\i18n\lt.js" />
+    <Content Include="Content\plupload\i18n\lv.js" />
+    <Content Include="Content\plupload\i18n\nl.js" />
+    <Content Include="Content\plupload\i18n\pl.js" />
+    <Content Include="Content\plupload\i18n\pt_BR.js" />
+    <Content Include="Content\plupload\i18n\ro.js" />
+    <Content Include="Content\plupload\i18n\ru.js" />
+    <Content Include="Content\plupload\i18n\sk.js" />
+    <Content Include="Content\plupload\i18n\sr.js" />
+    <Content Include="Content\plupload\i18n\sv.js" />
+    <Content Include="Content\plupload\i18n\th_TH.js" />
+    <Content Include="Content\plupload\i18n\tr.js" />
+    <Content Include="Content\plupload\i18n\uk_UA.js" />
+    <Content Include="Content\plupload\i18n\zh_CN.js" />
+    <Content Include="Content\plupload\i18n\zh_TW.js" />
+    <Content Include="Content\plupload\jquery.plupload.queue\css\jquery.plupload.queue.css" />
+    <Content Include="Content\plupload\jquery.plupload.queue\img\backgrounds.gif" />
+    <Content Include="Content\plupload\jquery.plupload.queue\img\buttons-disabled.png" />
+    <Content Include="Content\plupload\jquery.plupload.queue\img\buttons.png" />
+    <Content Include="Content\plupload\jquery.plupload.queue\img\delete.gif" />
+    <Content Include="Content\plupload\jquery.plupload.queue\img\done.gif" />
+    <Content Include="Content\plupload\jquery.plupload.queue\img\error.gif" />
+    <Content Include="Content\plupload\jquery.plupload.queue\img\throbber.gif" />
+    <Content Include="Content\plupload\jquery.plupload.queue\img\transp50.png" />
+    <Content Include="Content\plupload\jquery.plupload.queue\jquery.plupload.queue.js" />
+    <Content Include="Content\plupload\jquery.plupload.queue\jquery.plupload.queue.min.js" />
+    <Content Include="Content\plupload\jquery.ui.plupload\css\jquery.ui.plupload.css" />
+    <Content Include="Content\plupload\jquery.ui.plupload\img\loading.gif" />
+    <Content Include="Content\plupload\jquery.ui.plupload\img\plupload.png" />
+    <Content Include="Content\plupload\jquery.ui.plupload\jquery.ui.plupload.js" />
+    <Content Include="Content\plupload\jquery.ui.plupload\jquery.ui.plupload.min.js" />
+    <Content Include="Content\plupload\moxie.js" />
+    <Content Include="Content\plupload\moxie.min.js" />
+    <Content Include="Content\plupload\Moxie.swf" />
+    <Content Include="Content\plupload\plupload.dev.js" />
+    <Content Include="Content\plupload\plupload.full.min.js" />
+    <Content Include="Content\plupload\plupload.min.js" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\sweet-alert.css" />
+    <Content Include="Content\sweet-alert.js" />
+    <Content Include="Content\swf\copy_cvs_xls.swf" />
+    <Content Include="Content\swf\copy_cvs_xls_pdf.swf" />
+    <Content Include="Extentions\DI\Autofac\ReadMe.txt" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\js\plupupload\plupload.silverlight.xap" />
+    <Content Include="Content\js\Validation\jquery.unobtrusive-ajax.min.js.map" />
+    <Content Include="Content\js\Validation\jquery.validate.min.js.map" />
+    <Content Include="Content\plupload\Moxie.xap" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\MenuLtr.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Course\Index.cshtml" />
+    <Content Include="Views\Course\_ListPartial.cshtml" />
+    <Content Include="Views\Course\Create.cshtml" />
+    <Content Include="Views\Course\Edit.cshtml" />
+    <Content Include="Views\Enrolment\Index.cshtml" />
+    <Content Include="Views\Enrolment\Edit.cshtml" />
+    <Content Include="Views\Enrolment\Create.cshtml" />
+    <Content Include="Views\Enrolment\_ListPartial.cshtml" />
+    <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\Student\Edit.cshtml" />
+    <Content Include="Views\Student\Create.cshtml" />
+    <Content Include="Views\Student\_ListPartial.cshtml" />
+    <Content Include="Views\Professor\Index.cshtml" />
+    <Content Include="Views\Professor\Edit.cshtml" />
+    <Content Include="Views\Professor\Create.cshtml" />
+    <Content Include="Views\Professor\_ListPartial.cshtml" />
+    <Content Include="Views\Term\Index.cshtml" />
+    <Content Include="Views\Term\Edit.cshtml" />
+    <Content Include="Views\Term\Create.cshtml" />
+    <Content Include="Views\Term\_ListPartial.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\_ListPartial.cshtml" />
+    <Content Include="Views\User\Profile.cshtml" />
+    <Content Include="Views\GroupCourse\Index.cshtml" />
+    <Content Include="Views\GroupCourse\Edit.cshtml" />
+    <Content Include="Views\GroupCourse\Create.cshtml" />
+    <Content Include="Views\GroupCourse\_ListPartial.cshtml" />
+    <Content Include="Views\Department\_ListPartial.cshtml" />
+    <Content Include="Views\Department\Create.cshtml" />
+    <Content Include="Views\Department\Edit.cshtml" />
+    <Content Include="Views\Department\Index.cshtml" />
+    <Content Include="Views\AvailableCourses\_ListPartial.cshtml" />
+    <Content Include="Views\AvailableCourses\Create.cshtml" />
+    <Content Include="Views\AvailableCourses\Edit.cshtml" />
+    <Content Include="Views\AvailableCourses\Index.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\Configuration\Edit.cshtml" />
+    <Content Include="Views\Grading\SetGrad.cshtml" />
+    <Content Include="Views\Grading\_ListPartial.cshtml" />
+    <Content Include="Views\Grading\Index.cshtml" />
+    <Content Include="Views\Grading\IndexMyGrads.cshtml" />
+    <Content Include="Views\Shared\_AccountLayout.cshtml" />
+    <Content Include="Views\Grading\_ListMyGrade.cshtml" />
+    <Content Include="Views\Grading\IndexKolGrads.cshtml" />
+    <Content Include="Views\Enrolment\Remove.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\ErrorsLog\" />
+    <Folder Include="Content\time\" />
+    <Folder Include="Views\Student_Information_SystemController\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50465</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50465/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

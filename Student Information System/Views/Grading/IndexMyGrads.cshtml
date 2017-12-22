@@ -1,0 +1,60 @@
+﻿@using DbModel.DomainClasses.Enums
+@using Student_Information_System.Extentions.Helpers
+@using PagedList
+@using PagedList.Mvc
+@using DbModel.ViewModel.Election
+@model ScoreListVM
+@Html.AntiForgeryToken()
+@{
+    ViewBag.Title = "My Grades";
+}
+<ul class="breadcrumb">
+    <li><a href="#">Home</a><span class="divider">&raquo;</span></li>
+    <li><a href="#">Grading</a><span class="divider">&raquo;</span></li>
+    <li class="active">List</li>
+</ul>
+<div class="widget-content">
+    <div class="widget-box">
+        @using (Ajax.BeginForm("ListMyGrade", "Grading", null, new AjaxOptions
+        {
+            HttpMethod = "POST",
+            InsertionMode = InsertionMode.Replace,
+            UpdateTargetId = "GradingList"
+        }, new { @class = "well form-inline", id = "GradingSearchForm" }))
+        {
+            @Html.DropDownList("TermId", ViewBag.AllTerms as IEnumerable<SelectListItem>,
+                                        new { @class = "selectpicker" })
+            <button type="submit" class="btn">
+                <i class="icon-key bigger-110"></i>
+                Search
+            </button>
+        }
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div id="GradingList">
+        @{ Html.RenderAction("ListMyGrade", "Grading");}
+    </div>
+</div>
+@*@Scripts.Render("~/bundles/jqueryval")*@
+@Scripts.Render("~/bundles/jquery")
+
+
+@*@Html.PagedListPager(new StaticPagedList<ScoreViewModel>(Model.ScoreList, Model.PageNumber,
+    Model.PageCount, Model.TotalElections),
+    pageNumber => Url.Action("Index", "Grading", new
+    {
+        //term = Model.Term,
+        page = pageNumber,
+        TermId = Model.TermId
+    }),
+    new PagedListRenderOptions()
+    {
+        UlElementClasses = new List<string> { "pagination mbs" }
+        //LiElementClasses = new List<string> { "pagination mbs" }
+    })
+
+<script>
+    Public.Routin();
+</script>*@

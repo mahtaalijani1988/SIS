@@ -1,0 +1,107 @@
+﻿
+@using DbModel.DomainClasses.Enums
+@using PagedList
+@using PagedList.Mvc
+@using DbModel.ViewModel.PeresentedCourses
+@model PeresentedCoursesListVM
+@Html.AntiForgeryToken()
+<table class="table table-striped" id="PeresentedCoursesTable">
+    <thead>
+        <tr>
+            <th>Course Name</th>
+            <th>Professor Name</th>
+            <th>Term Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var advs in Model.PeresentedCoursesList)
+        {
+            <tr>
+                <td>
+                    <span class="label label-important">
+                        @if (advs.Course_Id.HasValue)
+                        {
+                            @advs.Course.Name
+                        }
+                    </span>
+                </td>
+                <td>
+                    <span class="label label-important">
+                        @if (advs.Professor_Id.HasValue)
+                        {
+                            @advs.Professor.FirstName @advs.Professor.LastName
+                        }
+                    </span>
+                </td>
+                <td>
+                    <span class="label label-important">
+                        @if (advs.Term_Id.HasValue)
+                        {
+                            @advs.Term.Name
+                        }
+                    </span>
+                </td>
+                <td>
+                    <div class="btn-group pull-right">
+                        <button data-toggle="dropdown" class="btn dropdown-toggle">
+                            <i class="icon-cog"></i>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/AvailableCourses/Edit/@advs.Id"><i class="icon-file"></i> Edit</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" id="row-@advs.Id"><i class="icon-trash"></i> Delete</a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="widget-content">
+    <div class="widget-box">
+        @using (Ajax.BeginForm("List", "AvailableCourses", null, new AjaxOptions
+        {
+            HttpMethod = "POST",
+            InsertionMode = InsertionMode.Replace,
+            UpdateTargetId = "AvailableCoursesList"
+        }, new { @class = "well form-inline", id = "AvailableCoursesFilterForm" }))
+        {
+            @Html.Hidden("term", Model.Term)
+            @*@Html.Hidden("courseSearchBy", ViewBag.courseSearchBy as string)*@
+            @*@Html.DropDownList("courseOrderBy", ViewBag.courseOrderByList as IEnumerable<SelectListItem>, new { @class = "form-control" })*@
+            @Html.DropDownList("order", ViewBag.OrderList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+            @Html.DropDownList("count", ViewBag.CountList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+
+            <button class="btn">
+                <i class="icon-key bigger-110"></i>
+                Sort By
+            </button>
+        }
+    </div>
+</div>
+@Html.PagedListPager(new StaticPagedList<PeresentedCoursesViewModel>(Model.PeresentedCoursesList, Model.PageNumber,
+    Model.PageCount, Model.TotalPeresentedCourses),
+    pageNumber => Url.Action("List", "AvailableCourses", new
+    {
+        term = Model.Term,
+        page = pageNumber,
+        count = Model.PageCount,
+        order = Model.Order,
+        objSearchBy = Model.PeresentedCoursesSearchBy,
+        objOrderBy = Model.PeresentedCoursesOrderBy,
+    }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(PagedListRenderOptions.ClassicPlusFirstAndLast,
+                new AjaxOptions
+                {
+                    AllowCache = false,
+                    HttpMethod = "GET",
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "AvailableCoursesList"
+                }
+))
+<script>
+    Public.Routin();
+</script>
+

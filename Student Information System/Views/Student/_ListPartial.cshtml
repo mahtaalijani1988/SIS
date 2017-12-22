@@ -1,0 +1,89 @@
+﻿@using DbModel.DomainClasses.Enums
+@using Student_Information_System.Extentions.Helpers
+@using PagedList
+@using PagedList.Mvc
+@using DbModel.ViewModel.Student
+@model StudentsListVM
+@Html.AntiForgeryToken()
+<table class="table table-striped" id="StudentTable">
+    <thead>
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Student.NO</th>
+            <th>Gender</th>
+            <th>BirthDay</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var advs in Model.StudentList)
+        {
+            <tr>
+                <td><span class="label label-important">@advs.FirstName</span></td>
+                <td><span class="label label-important">@advs.LastName</span></td>
+                <td><span class="label label-important">@advs.SNO</span></td>
+                <td><span class="label label-important">@Html.ConvertGender(@advs.Gender)</span></td>
+                <td><span class="label label-important">@Html.ConvertToShortDateTime(advs.BirthDay)</span></td>
+                <td>
+                    <div class="btn-group pull-right">
+                        <button data-toggle="dropdown" class="btn dropdown-toggle">
+                            <i class="icon-cog"></i>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/Student/Edit/@advs.Id"><i class="icon-file"></i> Edit</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" id="row-@advs.Id"><i class="icon-trash"></i> Delete</a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="widget-content">
+    <div class="widget-box">
+        @using (Ajax.BeginForm("List", "Student", null, new AjaxOptions
+        {
+            HttpMethod = "POST",
+            InsertionMode = InsertionMode.Replace,
+            UpdateTargetId = "StudentList"
+        }, new { @class = "well form-inline", id = "StudentFilterForm" }))
+        {
+            @Html.Hidden("term", Model.Term)
+            @*@Html.Hidden("courseSearchBy", ViewBag.courseSearchBy as string)*@
+            @*@Html.DropDownList("courseOrderBy", ViewBag.courseOrderByList as IEnumerable<SelectListItem>, new { @class = "form-control" })*@
+            @Html.DropDownList("order", ViewBag.OrderList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+            @Html.DropDownList("count", ViewBag.CountList as IEnumerable<SelectListItem>, new { @class = "form-control" })
+
+            <button class="btn">
+                <i class="icon-key bigger-110"></i>
+                Sort By
+            </button>
+        }
+    </div>
+</div>
+@Html.PagedListPager(new StaticPagedList<StudentViewModel>(Model.StudentList, Model.PageNumber,
+    Model.PageCount, Model.TotalStudents),
+    pageNumber => Url.Action("List", "Student", new
+    {
+        term = Model.Term,
+        page = pageNumber,
+        count = Model.PageCount,
+        order = Model.Order,
+        objSearchBy = Model.StudentSearchBy,
+    }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(PagedListRenderOptions.ClassicPlusFirstAndLast,
+                new AjaxOptions
+                {
+                    AllowCache = false,
+                    HttpMethod = "GET",
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "StudentList"
+                }
+))
+<script>
+    Public.Routin();
+</script>
+

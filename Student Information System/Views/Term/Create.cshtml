@@ -1,0 +1,80 @@
+﻿@model DbModel.ViewModel.Term.AddTermViewModel
+@{
+    ViewBag.Title = "Create";
+}
+<!-- Include DatePicker Required Prerequisites -->
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+<script src="~/Content/date/moment.min.js"></script>
+
+<ul class="breadcrumb">
+    <li><a href="#">Home</a><span class="divider">&raquo;</span></li>
+    <li><a href="#">Term</a><span class="divider">&raquo;</span></li>
+    <li class="active">Create New Term</li>
+</ul>
+<div class="row-fluid">
+    <div class="span ">
+        <div class="nonboxy-widget">
+            <div class="widget-head">
+                <h5>Create New Term</h5>
+            </div>
+            <div class="widget-content">
+                <div class="widget-box">
+                    @using (Html.BeginForm("Create", "Term", FormMethod.Post, new { @class = "form-horizontal well ucase" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
+
+                        <fieldset>
+                            <legend>Term Information</legend>
+                            <div class="control-group">
+                                <label class="control-label">Name</label>
+                                <div class="controls">
+                                    @*<input type="text" id="Name" name="Name" class="input-large">*@
+                                    @Html.EditorFor(model => model.Name, "", new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "help-inline" })
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Start Date</label>
+                                <div class="controls">
+                                    @*<input type="text" class="form-control" id="StartDate" name="StartDate">*@
+                                    @Html.TextBoxFor(model => model.StartDate, "", new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "help-inline" })
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">End Date</label>
+                                <div class="controls">
+                                    @*<input type="text" class="form-control" id="EndDate" name="EndDate">*@
+                                    @Html.TextBoxFor(model => model.EndDate, "", new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "help-inline" })
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-info">Save changes</button>
+                            <button class="btn btn-warning">Cancel</button>
+                        </div>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Include DatePicker Picker -->
+<script src="~/Content/date/daterangepicker.js"></script>
+<link href="~/Content/date/daterangepicker.css" rel="stylesheet" />
+<script>
+    $('input[name="StartDate"]').daterangepicker({
+        //defaultDate: "11/1/2013",
+        singleDatePicker: true,
+        showDropdowns: true
+    });
+    $('input[name="EndDate"]').daterangepicker({
+        //defaultDate: "11/1/2013",
+        singleDatePicker: true,
+        showDropdowns: true
+    });
+</script>
+@Scripts.Render("~/bundles/jqueryval")

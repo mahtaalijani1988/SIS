@@ -1,0 +1,51 @@
+﻿@using Microsoft.AspNet.Identity
+
+
+@*<li class="dropdown">
+    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Anthony <span class="alert-noty">25</span><i class="white-icons admin_user"></i><b class="caret"></b></a>
+    <ul class="dropdown-menu">
+        <li><a href="#"><i class="icon-inbox"></i> Inbox <span class="alert-noty">10</span></a></li>
+        <li><a href="#"><i class="icon-envelope"></i> Notifications <span class="alert-noty">15</span></a></li>
+        <li><a href="#"><i class="icon-briefcase"></i> My Account</a></li>
+        <li><a href="#"><i class="icon-file"></i> View Profile</a></li>
+        <li><a href="#"><i class="icon-pencil"></i> Edit Profile</a></li>
+        <li><a href="#"><i class="icon-cog"></i> Account Settings</a></li>
+        <li class="divider"></li>
+        <li><a href="#"><i class="icon-off"></i><strong> Logout</strong></a></li>
+    </ul>
+</li>*@
+<li class="dropdown">
+    @if (Request.IsAuthenticated)
+    {
+        using (Html.BeginForm("LogOff", "User", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+        {
+            @Html.AntiForgeryToken()
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                @User.Identity.GetUserName()<i class="white-icons admin_user"></i><b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    
+                        @*@Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })*@
+                </li>
+                <li><a href="javascript:document.getElementById('logoutForm').submit()">
+                    <i class="icon-off"></i><strong> Logout</strong></a>
+                </li>
+            </ul>
+        }
+    }
+    else
+    {
+        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+            Sign In
+        </a>
+        <ul class="dropdown-menu">
+            @*<li><a href="~/Customer/Register">
+                <i class="icon-inbox"></i>Register</a>
+            </li>*@
+            <li><a href="~/Customer/Login">
+                <i class="icon-inbox"></i>Log in</a>
+            </li>
+        </ul>
+    }
+</li>

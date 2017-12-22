@@ -1,0 +1,77 @@
+﻿@model DbModel.ViewModel.PeresentedCourses.EditPeresentedCoursesViewModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<script src="~/Content/js/jquery-1.10.2.js"></script>
+
+
+
+<ul class="breadcrumb">
+    <li><a href="#">Home</a><span class="divider">&raquo;</span></li>
+    <li><a href="#">AvailableCourses</a><span class="divider">&raquo;</span></li>
+    <li class="active">Edit Available Courses</li>
+</ul>
+<div class="row-fluid">
+    <div class="span ">
+        <div class="nonboxy-widget">
+            <div class="widget-head">
+                <h5>Edit Available Courses</h5>
+            </div>
+            <div class="widget-content">
+                <div class="widget-box">
+                    @using (Html.BeginForm("Edit", "AvailableCourses", FormMethod.Post, new { @class = "form-horizontal well ucase" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
+                        <fieldset>
+                            <legend>Available Courses Information</legend>
+
+                            <div class="control-group">
+                                <label class="control-label">Choose Cource</label>
+                                <div class="controls">
+                                    @Html.DropDownListFor(model => model.Course_Id, ViewBag.AllCources as IEnumerable<SelectListItem>,
+                                        ".....................", new { @class = "selectpicker" })
+                                    @Html.ValidationMessageFor(model => model.Course_Id, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Choose Professor</label>
+                                <div class="controls">
+                                    @Html.DropDownListFor(model => model.Professor_Id, ViewBag.AllProfessors as IEnumerable<SelectListItem>,
+                                        ".....................", new { @class = "selectpicker" })
+                                    @Html.ValidationMessageFor(model => model.Professor_Id, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Choose Term</label>
+                                <div class="controls">
+                                    @Html.DropDownListFor(model => model.Term_Id, ViewBag.AllTerms as IEnumerable<SelectListItem>,
+                                        ".....................", new { @class = "selectpicker" })
+                                    @Html.ValidationMessageFor(model => model.Term_Id, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Capacity</label>
+                                <div class="controls">
+                                    @*<input type="text" class="input-large" id="FirstName" name="FirstName">*@
+                                    @Html.EditorFor(model => model.Capacity, "", new { @type = "number", @class = "input-large" })
+                                    @Html.ValidationMessageFor(model => model.Capacity, "", new { @class = "help-inline" })
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-info">Save changes</button>
+                            <button class="btn btn-warning">Cancel</button>
+                        </div>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/jqueryval")

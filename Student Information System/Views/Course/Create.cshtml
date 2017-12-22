@@ -1,0 +1,70 @@
+﻿@using Student_Information_System.Extentions.Helpers
+@model DbModel.ViewModel.Course.AddCourseViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<script src="~/Content/js/jquery-1.10.2.js"></script>
+
+
+
+<ul class="breadcrumb">
+    <li><a href="#">Home</a><span class="divider">&raquo;</span></li>
+    <li><a href="#">Course</a><span class="divider">&raquo;</span></li>
+    <li class="active">Create New Course</li>
+</ul>
+<div class="row-fluid">
+    <div class="span ">
+        <div class="nonboxy-widget">
+            <div class="widget-head">
+                <h5>Create New Cource</h5>
+            </div>
+            <div class="widget-content">
+                <div class="widget-box">
+                    @using (Html.BeginForm("Create", "Course", FormMethod.Post, new { @class = "form-horizontal well ucase" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, null, new { @class = "help-inline" })
+
+                        <fieldset>
+                            <legend>Course Information</legend>
+                            <div class="control-group">
+                                <label class="control-label">Name</label>
+                                <div class="controls">
+                                    @*<input type="text" class="input-large" id="Name" name="Name">*@
+                                    @Html.EditorFor(model => model.Name, "", new { @class = "input-large" })
+                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "help-inline" })
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Unit Count</label>
+                                <div class="controls">
+                                    @*<input type="number" class="input-large" id="Unit" name="Unit">*@
+                                    @Html.EditorFor(model => model.Unit, "", new { @type = "number", @class = "input-large" })
+                                    @Html.ValidationMessageFor(model => model.Unit, "", new { @class = "help-inline" })
+                                </div>
+                            </div>
+                           
+                            <div class="control-group">
+                                <label class="control-label">Parent</label>
+                                <div class="controls">
+                                    @Html.DropDownListFor(model => model.Parent_id, ViewBag.CourcesForSelect as IEnumerable<SelectListItem>,
+                                        ".....................", new { @class = "selectpicker" })
+                                        @Html.ValidationMessageFor(model => model.Parent_id, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-info">Save changes</button>
+                            <button class="btn btn-warning">Cancel</button>
+                        </div>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@Scripts.Render("~/bundles/jqueryval")

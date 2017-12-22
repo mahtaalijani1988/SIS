@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ACB8B445-B106-45E9-AF95-853559419225}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DbModel</RootNamespace>
+    <AssemblyName>DbModel</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=3.3.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DataAnnotationsExtensions, Version=1.1.0.0, Culture=neutral, PublicKeyToken=358a5681c50fd84c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DataAnnotationsExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DataAnnotationsExtensions.ClientValidation, Version=1.1.0.0, Culture=neutral, PublicKeyToken=358a5681c50fd84c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DataAnnotationsExtensions.ClientValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="EFSecondLevelCache, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\EFSecondLevelCache.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\EntityFramework.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Persia, Version=3.0.4727.38582, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Persia.dll</HintPath>
+    </Reference>
+    <Reference Include="PersianDateTime, Version=1.1.5082.36395, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\PersianDateTime.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap, Version=3.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.Net4, Version=3.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\StructureMap.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.Web, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\StructureMap.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebActivator, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\WebActivator.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Context\IUnitOfWork.cs" />
+    <Compile Include="Context\Migrations\201702021134278_ini.cs" />
+    <Compile Include="Context\Migrations\201702021134278_ini.Designer.cs">
+      <DependentUpon>201702021134278_ini.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Context\Migrations\Configuration.cs" />
+    <Compile Include="Context\MyDbContext.cs" />
+    <Compile Include="DomainClasses\Configuration\CourseConfig.cs" />
+    <Compile Include="DomainClasses\Configuration\ElectionConfig.cs" />
+    <Compile Include="DomainClasses\Configuration\GroupCoursesConfig.cs" />
+    <Compile Include="DomainClasses\Configuration\GroupsConfig.cs" />
+    <Compile Include="DomainClasses\Configuration\PeresentedCoursesConfig.cs" />
+    <Compile Include="DomainClasses\Configuration\SiteOptionConfig.cs" />
+    <Compile Include="DomainClasses\Configuration\TermConfig.cs" />
+    <Compile Include="DomainClasses\Configuration\ProfessorConfig.cs" />
+    <Compile Include="DomainClasses\Configuration\StudentConfig.cs" />
+    <Compile Include="DomainClasses\Configuration\RoleConfig.cs" />
+    <Compile Include="DomainClasses\Configuration\UserConfig.cs" />
+    <Compile Include="DomainClasses\Entities\Course.cs" />
+    <Compile Include="DomainClasses\Entities\Election.cs" />
+    <Compile Include="DomainClasses\Entities\GroupCourses.cs" />
+    <Compile Include="DomainClasses\Entities\Groups.cs" />
+    <Compile Include="DomainClasses\Entities\PeresentedCourses.cs" />
+    <Compile Include="DomainClasses\Entities\Role.cs" />
+    <Compile Include="DomainClasses\Entities\SiteOption.cs" />
+    <Compile Include="DomainClasses\Entities\Student.cs" />
+    <Compile Include="DomainClasses\Entities\Professor.cs" />
+    <Compile Include="DomainClasses\Entities\Term.cs" />
+    <Compile Include="DomainClasses\Entities\User.cs" />
+    <Compile Include="DomainClasses\Enums\Enums.cs" />
+    <Compile Include="IocConfig\SampleObjectFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceLayer\Interfaces\ICourseService.cs" />
+    <Compile Include="ServiceLayer\Interfaces\IGroupCoursesService.cs" />
+    <Compile Include="ServiceLayer\Interfaces\IGroupsService.cs" />
+    <Compile Include="ServiceLayer\Interfaces\IElectionService.cs" />
+    <Compile Include="ServiceLayer\Interfaces\IPeresentedCoursesService.cs" />
+    <Compile Include="ServiceLayer\Interfaces\IRoleService.cs" />
+    <Compile Include="ServiceLayer\Interfaces\ISettingService.cs" />
+    <Compile Include="ServiceLayer\Interfaces\IStudentService.cs" />
+    <Compile Include="ServiceLayer\Interfaces\IProfessorService.cs" />
+    <Compile Include="ServiceLayer\Interfaces\ITermService.cs" />
+    <Compile Include="ServiceLayer\Interfaces\IUserService.cs" />
+    <Compile Include="ServiceLayer\Service\CourseService.cs" />
+    <Compile Include="ServiceLayer\Service\GroupCoursesService.cs" />
+    <Compile Include="ServiceLayer\Service\GroupsService.cs" />
+    <Compile Include="ServiceLayer\Service\ElectionService.cs" />
+    <Compile Include="ServiceLayer\Service\PeresentedCoursesService.cs" />
+    <Compile Include="ServiceLayer\Service\ProfessorService.cs" />
+    <Compile Include="ServiceLayer\Service\RoleService.cs" />
+    <Compile Include="ServiceLayer\Service\SettingService.cs" />
+    <Compile Include="ServiceLayer\Service\StudentService.cs" />
+    <Compile Include="ServiceLayer\Service\TermService.cs" />
+    <Compile Include="ServiceLayer\Service\UserService.cs" />
+    <Compile Include="Utilities\Caching\CacheInterceptor.cs" />
+    <Compile Include="Utilities\Caching\CacheMethodAttribute.cs" />
+    <Compile Include="Utilities\ConvertToPersian.cs" />
+    <Compile Include="Utilities\DateAndTime.cs" />
+    <Compile Include="Utilities\EnumSelector.cs" />
+    <Compile Include="Utilities\JsonExt.cs" />
+    <Compile Include="Utilities\Mail\EMail.cs" />
+    <Compile Include="Utilities\Security\Encryption.cs" />
+    <Compile Include="Utilities\Security\SafePassword.cs" />
+    <Compile Include="ViewModel\Course\AddCourseViewModel.cs" />
+    <Compile Include="ViewModel\Course\CourseViewModel.cs" />
+    <Compile Include="ViewModel\Course\CourseListVM.cs" />
+    <Compile Include="ViewModel\Course\EditCourseViewModel.cs" />
+    <Compile Include="ViewModel\Election\AddElectionViewModel.cs" />
+    <Compile Include="ViewModel\Election\AverageClass.cs" />
+    <Compile Include="ViewModel\Election\EditElectionViewModel.cs" />
+    <Compile Include="ViewModel\Election\ElectionListVM.cs" />
+    <Compile Include="ViewModel\Election\ElectionViewModel.cs" />
+    <Compile Include="ViewModel\Election\ScoreListVM.cs" />
+    <Compile Include="ViewModel\Election\ScoreViewModel.cs" />
+    <Compile Include="ViewModel\Election\SetScoreViewModel.cs" />
+    <Compile Include="ViewModel\GroupCourse\AddGroupCourseViewModel.cs" />
+    <Compile Include="ViewModel\GroupCourse\EditGroupCourseViewModel.cs" />
+    <Compile Include="ViewModel\GroupCourse\GroupCourseListVM.cs" />
+    <Compile Include="ViewModel\GroupCourse\GroupCourseViewModel.cs" />
+    <Compile Include="ViewModel\Groups\AddGroupsViewModel.cs" />
+    <Compile Include="ViewModel\Groups\EditGroupsViewModel.cs" />
+    <Compile Include="ViewModel\Groups\GroupsListVM.cs" />
+    <Compile Include="ViewModel\Groups\GroupsViewModel.cs" />
+    <Compile Include="ViewModel\PeresentedCourses\AddPeresentedCoursesViewModel.cs" />
+    <Compile Include="ViewModel\PeresentedCourses\EditPeresentedCoursesViewModel.cs" />
+    <Compile Include="ViewModel\PeresentedCourses\PeresentedCoursesListVM.cs" />
+    <Compile Include="ViewModel\PeresentedCourses\PeresentedCoursesViewModel.cs" />
+    <Compile Include="ViewModel\Professor\AddProfessorViewModel.cs" />
+    <Compile Include="ViewModel\Professor\EditProfessorViewModel.cs" />
+    <Compile Include="ViewModel\Setting\EditSettingViewModel.cs" />
+    <Compile Include="ViewModel\Setting\SettingViewModel.cs" />
+    <Compile Include="ViewModel\Setting\SiteConfig.cs" />
+    <Compile Include="ViewModel\Setting\UpdateOptionModel.cs" />
+    <Compile Include="ViewModel\Student\AddStudentViewModel.cs" />
+    <Compile Include="ViewModel\Student\EditStudentViewModel.cs" />
+    <Compile Include="ViewModel\Student\StudentsListVM.cs" />
+    <Compile Include="ViewModel\Student\StudentViewModel.cs" />
+    <Compile Include="ViewModel\Professor\ProfessorListVM.cs" />
+    <Compile Include="ViewModel\Professor\ProfessorViewModel.cs" />
+    <Compile Include="ViewModel\Term\AddTermViewModel.cs" />
+    <Compile Include="ViewModel\Term\EditTermViewModel.cs" />
+    <Compile Include="ViewModel\Term\TermListVM.cs" />
+    <Compile Include="ViewModel\Term\TermViewModel.cs" />
+    <Compile Include="ViewModel\User\AddUserViewModel.cs" />
+    <Compile Include="ViewModel\User\DetailsUserViewModel.cs" />
+    <Compile Include="ViewModel\User\EditUserViewModel.cs" />
+    <Compile Include="ViewModel\User\ForgetPasswordViewModel.cs" />
+    <Compile Include="ViewModel\User\LoginViewModel.cs" />
+    <Compile Include="ViewModel\User\ProfileViewModel.cs" />
+    <Compile Include="ViewModel\User\RegisterViewModel.cs" />
+    <Compile Include="ViewModel\User\UsersListViewModel.cs" />
+    <Compile Include="ViewModel\User\UserViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Context\Migrations\201702021134278_ini.resx">
+      <DependentUpon>201702021134278_ini.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

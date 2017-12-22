@@ -1,0 +1,61 @@
+﻿@model DbModel.ViewModel.Groups.EditGroupsViewModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<script src="~/Content/js/jquery-1.10.2.js"></script>
+
+
+
+<ul class="breadcrumb">
+    <li><a href="#">Home</a><span class="divider">&raquo;</span></li>
+    <li><a href="#">Department</a><span class="divider">&raquo;</span></li>
+    <li class="active">Edit Groups</li>
+</ul>
+<div class="row-fluid">
+    <div class="span ">
+        <div class="nonboxy-widget">
+            <div class="widget-head">
+                <h5>Edit Election</h5>
+            </div>
+            <div class="widget-content">
+                <div class="widget-box">
+                    @using (Html.BeginForm("Edit", "Department", FormMethod.Post, new { @class = "form-horizontal well ucase" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
+
+                        <fieldset>
+                            <legend>Department Information</legend>
+
+                            <div class="control-group">
+                                <label class="control-label">Name</label>
+                                <div class="controls">
+                                    @*<input type="text" class="input-large" id="FirstName" name="FirstName">*@
+                                    @Html.EditorFor(model => model.Name, "", new { @class = "input-large" })
+                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "help-inline" })
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Manager</label>
+                                <div class="controls">
+                                    @*<input type="text" class="input-large" id="LastName" name="LastName">*@
+                                    @Html.EditorFor(model => model.Manager, "", new { @class = "input-large" })
+                                    @Html.ValidationMessageFor(model => model.Manager, "", new { @class = "help-inline" })
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-info">Save changes</button>
+                            <button class="btn btn-warning">Cancel</button>
+                        </div>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@Scripts.Render("~/bundles/jqueryval")

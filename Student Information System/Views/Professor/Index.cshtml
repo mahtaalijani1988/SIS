@@ -1,0 +1,109 @@
+﻿@{
+    ViewBag.Title = "Professor List";
+}
+<ul class="breadcrumb">
+    <li><a href="#">Home</a><span class="divider">&raquo;</span></li>
+    <li><a href="#">Professor</a><span class="divider">&raquo;</span></li>
+    <li class="active">Create</li>
+</ul>
+<div class="row-fluid">
+    <div class="span12 ">
+
+        <div class="widget-content">
+            <div class="widget-box">
+                @using (Ajax.BeginForm("List", "Professor", null, new AjaxOptions
+                {
+                    HttpMethod = "POST",
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "ProfessorList"
+                }, new { @class = "well form-inline", id = "ProfessorSearchForm" }))
+                {
+                    <input name="term" placeholder="Search" value="" type="text" class="input-small" />
+                    @*<div class="col-md-3">
+                                @Html.DropDownList("categoryId", ViewBag.Categories as IEnumerable<SelectListItem>, "--همه گروه ها--", new { @class = "selectpicker" })
+                            </div>
+                            <div class="col-md-2" data-toggle="tooltip" data-placement="top" title="ارسال رایگان">
+                                    <strong>ارسال رایگان</strong>
+                                    @Html.CheckBox("freeSend", false)
+                                </div>
+
+                        <div class="col-md-2" data-toggle="tooltip" data-placement="top" title="حذف شده">
+                            <strong>حذف شده</strong>
+                            @Html.CheckBox("deleted", false)
+                        </div>*@
+                    <button type="submit" class="btn">
+                        <i class="icon-key bigger-110"></i>
+                        Search
+                    </button>
+                }
+            </div>
+        </div>
+
+        <div class="widget-block">
+            <div class="widget-head">
+                <h5>All Professors List</h5>
+                <div class="widget-control pull-right">
+                    <a href="#" data-toggle="dropdown" class="btn dropdown-toggle"><i class="icon-cog"></i><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="~/Professor/add"><i class="icon-plus"></i> Add New</a></li>
+                        @*<li><a href="#"><i class="icon-ok"></i> Bulk Approved</a></li>
+                            <li><a href="#"><i class="icon-minus-sign"></i> Bulk Remove</a></li>*@
+                    </ul>
+                </div>
+            </div>
+
+            <div class="widget-content">
+                <div class="widget-box" id="ProfessorList">
+                    @{ Html.RenderAction("List", "Professor");}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@*@Scripts.Render("~/bundles/jqueryval")*@
+@Scripts.Render("~/bundles/jquery")
+
+
+@section JavaScript
+{
+    <script>
+        $(function () {
+            $(document).on("click", "a[id^='row']", function (e) {
+                e.stopPropagation();
+                var span = $(this);
+                var id = span.attr('id').replace('row-', '');
+                swal({
+                    title: "Are You Sure?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonClass: "btn btn-md btn-danger",
+                    confirmButtonText: "OK",
+                    cancelButtonText: "Cancel",
+                    closeOnConfirm: false
+                },
+                   function (confirmed) {
+                if (confirmed) {
+                    $.ajax({
+                        url: '@Url.Action("Delete")',
+                        data: { "id": id }
+                    })
+                     .done(function (data) {
+                        sweetAlert({
+                            title: "Result!",
+                            text: data.msg,//"Your Record was successfully Answered!",//
+                            type: "success"
+                            },function () {
+                                  window.location.href = window.location;
+                            });
+                     })
+                     .error(function (data) {
+                           swal("Oops", "We couldn't connect to the server!", "error");
+                     });
+                }
+            });
+            });
+        });
+    </script>
+}

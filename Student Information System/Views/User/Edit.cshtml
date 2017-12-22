@@ -1,0 +1,88 @@
+﻿@model DbModel.ViewModel.User.EditUserViewModel
+@{
+    ViewBag.Title = "Create New User";
+}
+
+@*<script src="~/Content/js/jquery-1.10.2.js"></script>*@
+
+
+<ul class="breadcrumb">
+    <li><a href="#">Home</a><span class="divider">&raquo;</span></li>
+    <li><a href="#">User</a><span class="divider">&raquo;</span></li>
+    <li class="active">Create New User</li>
+</ul>
+<div class="row-fluid">
+    <div class="span12">
+        <div class="nonboxy-widget">
+            <div class="widget-head">
+                <h5>Edit User Information</h5>
+            </div>
+            <div class="widget-content">
+                <div class="widget-box">
+                    @using (Html.BeginForm("Edit", "User", FormMethod.Post, new { @class = "form-horizontal well ucase" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
+
+                        <fieldset>
+                            <legend>User Information</legend>
+                            <div class="control-group">
+                                <label class="control-label">UserName</label>
+                                <div class="controls">
+                                    @*<input type="text" class="input-large">*@
+                                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "input-large" } })
+                                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "help-inline" })
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Email</label>
+                                <div class="controls">
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @type = "email", @class = "input-large" } })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "help-inline" })
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">User Role</label>
+                                <div class="controls">
+                                    @Html.DropDownListFor(model => model.RoleId, ViewBag.Roles as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.RoleId, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Baned State</label>
+                                <div class="controls">
+                                    <label class="checkbox inline">
+                                        @Html.CheckBoxFor(m => m.IsBaned, new { @class = "uniform" }) IsBaned
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Password</label>
+                                <div class="controls">
+                                    @*<input type="text" class="input-large">*@
+                                    @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "input-large" } })
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "help-inline" })
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Confirm Password</label>
+                                <div class="controls">
+                                    @*<input type="text" class="input-large">*@
+                                    @Html.PasswordFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "input-large" } })
+                                    @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "help-inline" })
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-info">Save changes</button>
+                            <button class="btn btn-warning">Cancel</button>
+                        </div>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*@Scripts.Render("~/bundles/jqueryval")*@

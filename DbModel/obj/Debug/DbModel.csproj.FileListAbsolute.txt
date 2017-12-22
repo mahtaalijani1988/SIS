@@ -1,0 +1,8 @@
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\DbModel\bin\Debug\DbModel.dll.config
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\DbModel\bin\Debug\DbModel.dll
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\DbModel\bin\Debug\DbModel.pdb
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\DbModel\obj\Debug\DbModel.csprojResolveAssemblyReference.cache
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\DbModel\obj\Debug\DbModel.Context.Migrations.Initial1.resources
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\DbModel\obj\Debug\DbModel.csproj.GenerateResource.Cache
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\DbModel\obj\Debug\DbModel.dll
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\DbModel\obj\Debug\DbModel.pdb

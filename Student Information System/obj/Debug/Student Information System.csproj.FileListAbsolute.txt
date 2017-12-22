@@ -1,0 +1,97 @@
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\roslyn\csc.exe
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\roslyn\csc.exe.config
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\roslyn\csc.rsp
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\roslyn\csi.exe
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\roslyn\csi.rsp
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\roslyn\System.AppContext.dll
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\roslyn\vbc.exe
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\roslyn\vbc.exe.config
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\roslyn\vbc.rsp
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\roslyn\VBCSCompiler.exe
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\Student Information System.dll.config
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\Student Information System.dll
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\Student Information System.pdb
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\Newtonsoft.Json.dll
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\System.Web.Helpers.dll
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\System.Web.Optimization.dll
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\System.Web.Razor.dll
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\System.Web.WebPages.Deployment.dll
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\System.Web.WebPages.dll
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\System.Web.WebPages.Razor.dll
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\Microsoft.Web.Administration.dll
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\System.Web.Helpers.xml
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\System.Web.Optimization.xml
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\System.Web.Razor.xml
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\System.Web.WebPages.xml
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\System.Web.WebPages.Deployment.xml
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\System.Web.WebPages.Razor.xml
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\bin\Newtonsoft.Json.xml
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\obj\Debug\Student Information System.dll
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\obj\Debug\Student Information System.pdb
+C:\Users\mahdi\Documents\Visual Studio 2017\Projects\Student Information System\Student Information System\obj\Debug\Student Information System.csprojResolveAssemblyReference.cache
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\roslyn\csc.exe
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\roslyn\csc.exe.config
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\roslyn\csc.rsp
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\roslyn\csi.exe
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\roslyn\csi.rsp
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\roslyn\System.AppContext.dll
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\roslyn\vbc.exe
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\roslyn\vbc.exe.config
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\roslyn\vbc.rsp
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\roslyn\VBCSCompiler.exe
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\Student Information System.dll.config
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\Student Information System.dll
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\Student Information System.pdb
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\Newtonsoft.Json.dll
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\System.Web.Helpers.dll
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\System.Web.Optimization.dll
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\System.Web.Razor.dll
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\System.Web.WebPages.dll
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\System.Web.WebPages.Razor.dll
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\Microsoft.Web.Administration.dll
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\System.Web.Helpers.xml
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\System.Web.Optimization.xml
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\System.Web.Razor.xml
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\System.Web.WebPages.xml
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\System.Web.WebPages.Razor.xml
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\bin\Newtonsoft.Json.xml
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\obj\Debug\Student Information System.csprojResolveAssemblyReference.cache
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\obj\Debug\Student Information System.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\obj\Debug\Student Information System.dll
+C:\Users\Asus\Desktop\New folder\New folder\Student Information System\Student Information System\obj\Debug\Student Information System.pdb

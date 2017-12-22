@@ -1,0 +1,78 @@
+﻿@using DbModel.DomainClasses.Enums
+@using Student_Information_System.Extentions.Helpers
+@using PagedList
+@using PagedList.Mvc
+@using DbModel.ViewModel.Election
+@model ScoreListVM
+@Html.AntiForgeryToken()
+@{
+    ViewBag.Title = "Transcripts";
+}
+<ul class="breadcrumb">
+    <li><a href="#">Home</a><span class="divider">&raquo;</span></li>
+    <li><a href="#">Grading</a><span class="divider">&raquo;</span></li>
+    <li class="active">List</li>
+</ul>
+
+<div class="row-fluid">
+    <div id="GradingList">
+        <div class="span ">
+            <div class="nonboxy-widget">
+                <div class="widget-head">
+                    <h5>Student Information</h5>
+                </div>
+                <div class="widget-content">
+                    <div class="widget-box" id="ElectionList1">
+                        <table class="table table-striped" id="ElectionTable1">
+                            <thead>
+                                <tr>
+                                    <th>Student Name</th>
+                                    <th>Term Name</th>
+                                    <th>Average</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (ViewBag.avglist != null)
+                                {
+                                    foreach (var advs in ViewBag.avglist as IEnumerable<AverageClass>)
+                                    {
+                                        <tr>
+
+                                            <td><span class="label label-important">@advs.Student.FirstName @advs.Student.LastName</span></td>
+                                            <td><span class="label label-important">@advs.Term.Name</span></td>
+                                            <td><span class="label label-important">@advs.Average</span></td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                        <div class="well form-inline">
+                            <h1>CGPA : <b>@ViewBag.koll</b></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*@Scripts.Render("~/bundles/jqueryval")*@
+@Scripts.Render("~/bundles/jquery")
+
+
+@*@Html.PagedListPager(new StaticPagedList<ScoreViewModel>(Model.ScoreList, Model.PageNumber,
+        Model.PageCount, Model.TotalElections),
+        pageNumber => Url.Action("Index", "Grading", new
+        {
+            //term = Model.Term,
+            page = pageNumber,
+            TermId = Model.TermId
+        }),
+        new PagedListRenderOptions()
+        {
+            UlElementClasses = new List<string> { "pagination mbs" }
+            //LiElementClasses = new List<string> { "pagination mbs" }
+        })
+
+    <script>
+        Public.Routin();
+    </script>*@
